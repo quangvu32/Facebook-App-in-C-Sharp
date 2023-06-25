@@ -193,9 +193,9 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(225, 123);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
+            this.label7.Size = new System.Drawing.Size(22, 25);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Gửi qua email:";
+            this.label7.Text = "0";
             // 
             // pass_forgot
             // 

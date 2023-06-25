@@ -26,14 +26,18 @@ namespace Do_an
 
         private void btn_tiep_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
-            panel2.Visible = true;
+            panel1.Visible = false;panel2.Visible = true;
+
+            if (txt_email.Text[0] == '0')
+            {
+                label5.Visible = true;label7.Visible = true;
+                label7.Text = txt_email.Text;
+            }    
         }
 
         private void btn_huy2_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            panel2.Visible = false;
+            panel1.Visible = true;panel2.Visible = false;
         }
     }
 }
