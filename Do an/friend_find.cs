@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Do_an
 {
-    public partial class feeds : UserControl
+    public partial class friend_find : UserControl
     {
-        public feeds()
+        public friend_find()
         {
             InitializeComponent();
         }

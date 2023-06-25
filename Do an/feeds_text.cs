@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Do_an
 {
-    public partial class UserControl1 : UserControl
+    public partial class feeds_text : UserControl
     {
-        public UserControl1()
+        public feeds_text()
         {
             InitializeComponent();
-        }
-
-
-        private Image _image;
-        public Image image
-        {
-            get { return _image; }
-            set { _image = value; pictureBox1.Image = value; }
         }
     }
 }

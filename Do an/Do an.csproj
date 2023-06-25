@@ -33,8 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net48\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +64,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="feeds.cs">
+    <Compile Include="chat.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="feeds.Designer.cs">
-      <DependentUpon>feeds.cs</DependentUpon>
+    <Compile Include="chat.Designer.cs">
+      <DependentUpon>chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feeds_image.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="feeds_image.Designer.cs">
+      <DependentUpon>feeds_image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feeds_text.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="feeds_text.Designer.cs">
+      <DependentUpon>feeds_text.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feeds_video.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="feeds_video.Designer.cs">
+      <DependentUpon>feeds_video.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -58,16 +100,58 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="friend_find.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="friend_find.Designer.cs">
+      <DependentUpon>friend_find.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewFolder1\messager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\messager.Designer.cs">
+      <DependentUpon>messager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pass_forgot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pass_forgot.Designer.cs">
+      <DependentUpon>pass_forgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reaction.Designer.cs">
+      <DependentUpon>reaction.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="chat.resx">
+      <DependentUpon>chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feeds_image.resx">
+      <DependentUpon>feeds_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feeds_text.resx">
+      <DependentUpon>feeds_text.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feeds_video.resx">
+      <DependentUpon>feeds_video.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="friend_find.resx">
+      <DependentUpon>friend_find.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\messager.resx">
+      <DependentUpon>messager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pass_forgot.resx">
+      <DependentUpon>pass_forgot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,9 +163,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="reaction.resx">
+      <DependentUpon>reaction.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +185,124 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3844470_home_house_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngimg.com - facebook_logos_PNG19749.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-06-14 114151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-06-14 114151 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8541829_eye_vision_view_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8541830_eye_slash_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3844470_home_house_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\friend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5296499_fb_facebook_facebook logo_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\messenger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\love.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\care.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\haha.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wow1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angry.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643766_album_image_landscape_photo_photos_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\messenger1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2205199_dot_hide_menu_more_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play Button Png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White Pause Button Symbol Png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play Button Png1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\352020_arrow_back_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngaaa.com-1451153.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

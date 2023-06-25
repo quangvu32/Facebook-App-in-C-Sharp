@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Do_an.NewFolder1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Do_an
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new DangNhap());
         }
     }
 }
