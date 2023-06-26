@@ -53,24 +53,22 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.pic_background = new System.Windows.Forms.PictureBox();
             this.panel_post = new System.Windows.Forms.Panel();
-            this.video = new AxWMPLib.AxWindowsMediaPlayer();
+            this.link_xóa = new System.Windows.Forms.LinkLabel();
             this.pic_back = new System.Windows.Forms.PictureBox();
             this.cb_quyen = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPost_video = new System.Windows.Forms.Button();
             this.btnPost_image = new System.Windows.Forms.Button();
             this.btn_post = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.picProfile3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.video = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel_home = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_update = new System.Windows.Forms.Button();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel_friend = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
@@ -84,14 +82,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picProfile2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_background)).BeginInit();
             this.panel_post.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.video)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_back)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.video)).BeginInit();
             this.panel_home.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_friend.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -396,30 +392,36 @@
             // 
             // panel_post
             // 
-            this.panel_post.Controls.Add(this.video);
+            this.panel_post.BackColor = System.Drawing.Color.White;
+            this.panel_post.Controls.Add(this.link_xóa);
             this.panel_post.Controls.Add(this.pic_back);
             this.panel_post.Controls.Add(this.cb_quyen);
-            this.panel_post.Controls.Add(this.pictureBox3);
-            this.panel_post.Controls.Add(this.listView1);
             this.panel_post.Controls.Add(this.label1);
             this.panel_post.Controls.Add(this.btnPost_video);
             this.panel_post.Controls.Add(this.btnPost_image);
             this.panel_post.Controls.Add(this.btn_post);
             this.panel_post.Controls.Add(this.richTextBox1);
             this.panel_post.Controls.Add(this.picProfile3);
-            this.panel_post.Location = new System.Drawing.Point(441, 127);
+            this.panel_post.Controls.Add(this.pictureBox3);
+            this.panel_post.Controls.Add(this.video);
+            this.panel_post.Location = new System.Drawing.Point(426, 125);
             this.panel_post.Name = "panel_post";
             this.panel_post.Size = new System.Drawing.Size(349, 553);
             this.panel_post.TabIndex = 5;
             // 
-            // video
+            // link_xóa
             // 
-            this.video.Enabled = true;
-            this.video.Location = new System.Drawing.Point(1, 192);
-            this.video.Name = "video";
-            this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
-            this.video.Size = new System.Drawing.Size(349, 183);
-            this.video.TabIndex = 14;
+            this.link_xóa.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
+            this.link_xóa.AutoSize = true;
+            this.link_xóa.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_xóa.LinkColor = System.Drawing.Color.Red;
+            this.link_xóa.Location = new System.Drawing.Point(308, 189);
+            this.link_xóa.Name = "link_xóa";
+            this.link_xóa.Size = new System.Drawing.Size(38, 21);
+            this.link_xóa.TabIndex = 18;
+            this.link_xóa.TabStop = true;
+            this.link_xóa.Text = "Xóa";
+            this.link_xóa.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_xóa_LinkClicked);
             // 
             // pic_back
             // 
@@ -444,35 +446,13 @@
             this.cb_quyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_quyen.ItemHeight = 30;
             this.cb_quyen.Items.AddRange(new object[] {
+            "Công khai",
             "Bạn bè",
-            "Bạn bè cụ thể",
             "Chỉ mình tôi"});
             this.cb_quyen.Location = new System.Drawing.Point(71, 81);
             this.cb_quyen.Name = "cb_quyen";
             this.cb_quyen.Size = new System.Drawing.Size(134, 36);
             this.cb_quyen.TabIndex = 13;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 192);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(349, 183);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.CheckBoxes = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 244);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(349, 109);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
@@ -486,7 +466,7 @@
             // 
             // btnPost_video
             // 
-            this.btnPost_video.Location = new System.Drawing.Point(120, 432);
+            this.btnPost_video.Location = new System.Drawing.Point(3, 442);
             this.btnPost_video.Name = "btnPost_video";
             this.btnPost_video.Size = new System.Drawing.Size(117, 43);
             this.btnPost_video.TabIndex = 6;
@@ -496,7 +476,7 @@
             // 
             // btnPost_image
             // 
-            this.btnPost_image.Location = new System.Drawing.Point(121, 381);
+            this.btnPost_image.Location = new System.Drawing.Point(3, 391);
             this.btnPost_image.Name = "btnPost_image";
             this.btnPost_image.Size = new System.Drawing.Size(116, 45);
             this.btnPost_image.TabIndex = 5;
@@ -537,14 +517,33 @@
             this.picProfile3.TabIndex = 2;
             this.picProfile3.TabStop = false;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 211);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(349, 183);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // video
+            // 
+            this.video.Enabled = true;
+            this.video.Location = new System.Drawing.Point(1, 211);
+            this.video.Name = "video";
+            this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
+            this.video.Size = new System.Drawing.Size(349, 183);
+            this.video.TabIndex = 14;
+            // 
             // panel_home
             // 
             this.panel_home.BackColor = System.Drawing.Color.White;
             this.panel_home.Controls.Add(this.flowLayoutPanel1);
             this.panel_home.Controls.Add(this.panel2);
-            this.panel_home.Location = new System.Drawing.Point(820, 130);
+            this.panel_home.Location = new System.Drawing.Point(426, 125);
             this.panel_home.Name = "panel_home";
-            this.panel_home.Size = new System.Drawing.Size(388, 553);
+            this.panel_home.Size = new System.Drawing.Size(388, 548);
             this.panel_home.TabIndex = 8;
             // 
             // panel4
@@ -552,9 +551,7 @@
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.btn_update);
-            this.panel4.Controls.Add(this.guna2CirclePictureBox1);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(1513, 23);
+            this.panel4.Location = new System.Drawing.Point(1498, 23);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(347, 336);
@@ -585,39 +582,21 @@
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1, 43);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(58, 52);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 3;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(341, 69);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel_friend
             // 
             this.panel_friend.BackColor = System.Drawing.Color.White;
             this.panel_friend.Controls.Add(this.flowLayoutPanel3);
-            this.panel_friend.Location = new System.Drawing.Point(1246, 168);
+            this.panel_friend.Location = new System.Drawing.Point(820, 125);
             this.panel_friend.Name = "panel_friend";
             this.panel_friend.Size = new System.Drawing.Size(424, 516);
             this.panel_friend.TabIndex = 12;
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoScroll = true;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 60);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(245, 452);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(421, 352);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // Form1
@@ -649,15 +628,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_background)).EndInit();
             this.panel_post.ResumeLayout(false);
             this.panel_post.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.video)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_back)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.video)).EndInit();
             this.panel_home.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel_friend.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -689,7 +666,6 @@
         private System.Windows.Forms.Button btn_post;
         private System.Windows.Forms.Label lb_username;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel_home;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picProfile;
         private System.Windows.Forms.Panel panel3;
@@ -697,8 +673,6 @@
         private System.Windows.Forms.PictureBox pic_update;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_update;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -708,6 +682,7 @@
         private System.Windows.Forms.Label lb_dangxuat;
         private System.Windows.Forms.Panel panel_friend;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.LinkLabel link_xóa;
     }
 }
 

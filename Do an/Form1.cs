@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Do_an
 {
     public partial class Form1 : Form
     {
+        DateTime date = DateTime.Now;
         static string fileLocation()
         {
             string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
@@ -17,15 +19,20 @@ namespace Do_an
             string projectFolderPath = Directory.GetParent(parentFolder).FullName;
             string parent = Directory.GetParent(projectFolderPath).FullName;
             return parent;
+        }  
+        static string fileLocation2()
+        {
+            string parent2 = Directory.GetParent(fileLocation()).FullName;
+            return parent2;
         }
-        DateTime date = DateTime.Now;
-        string address = $"{fileLocation()}\\";
+
+        public static string address = $"{fileLocation()}\\";
+        public static string path = $"{fileLocation2()}";
 
         public Form1(string username)
         {
             InitializeComponent();
             lb_username.Text = username;
-            //StreamReader r = new StreamReader();
         }
         private string _reaction;
         public string reaction
@@ -35,7 +42,11 @@ namespace Do_an
         }
         private void lb_dangxuat_Click(object sender, EventArgs e)
         {
-
+            DangNhap dn = new DangNhap();
+            dn.Show();
+            Dispose(true);
+            
+            Close();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -46,14 +57,19 @@ namespace Do_an
             panel_home.Visible = true;
             panel_profile.Visible = false;
             panel_friend.Visible = false;
+            btn_post.Tag = "Text";
             
-            cb_quyen.Text = "Bạn bè";
+            cb_quyen.Text = "Công khai";
             video.uiMode = "none";
+            video.Visible = false;
+            pictureBox3.Visible = false;
+
             picProfile2.Tag = "0";
             pic_background.Tag = "0";
             Readfile_profile("profile.txt", picProfile2);
             Readfile_profile("background.txt", pic_background);
             Readfile_post();
+            friend();
 
         }
 
@@ -74,7 +90,31 @@ namespace Do_an
                 picProfile.Image = p.Image; picProfile3.Image = p.Image;
             }
         }
-
+        private void friend()
+        {
+            string tenfile = "user.txt";
+            FileInfo f = new FileInfo(tenfile);
+            if (f.Exists)
+            {
+                StreamReader sr = new StreamReader(tenfile);
+                string str;
+                while ((str = sr.ReadLine()) != null)
+                {
+                    string p;
+                    string[] st = str.Split('\t');
+                    StreamReader a = new StreamReader($"{address}users\\{st[0]}\\profile.txt");
+                    p = a.ReadLine(); 
+                        friend_find dv = new friend_find()
+                        {
+                            User = st[0],
+                            profile = Image.FromFile($"{address}users\\{st[0]}\\post\\{p}")
+                        };
+                    a.Close();
+                    if (flowLayoutPanel3.Controls.Count < 0) { flowLayoutPanel3.Controls.Clear(); }
+                    else { flowLayoutPanel3.Controls.Add(dv); }
+                }
+            }
+        }
         private void Readfile_post()
         {
             string tenfile = $"{address}users\\{lb_username.Text}\\post\\post.txt";
@@ -113,6 +153,21 @@ namespace Do_an
                             reaction = st[6],
                             tag = st[5],
                             User = picProfile2.Image
+                        };
+
+                        if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
+                        else { flowLayoutPanel2.Controls.Add(dv); }
+                    }
+                    if (st[1] == "Text")
+                    {
+                        feeds_text dv = new feeds_text
+                        {
+                            username = st[0],
+                            text = st[4],
+                            date = st[3],
+                            reaction = st[6],
+                            User = picProfile2.Image,
+                            Tag = st[4]
                         };
 
                         if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
@@ -188,17 +243,9 @@ namespace Do_an
             Ofile.Filter = "Choose Image(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
             if (Ofile.ShowDialog() == DialogResult.OK)
             {
-                //imagelist.ImageSize = new Size(100, 100);
-                //imagelist.ColorDepth = ColorDepth.Depth32Bit;  
                 pictureBox3.Image = Image.FromFile(Ofile.FileName);
                 pictureBox3.Tag = Ofile.FileName;
-                //imagelist.Images.Add(new Bitmap(Image.FromFile(Ofile.FileName)));
-                //listView1.Items.Add("", i);
-                //i++;
-                //Readfile();
             }
-            //listView1.LargeImageList = imagelist;
-            //listView1.View = View.LargeIcon;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -265,7 +312,23 @@ namespace Do_an
                         + "Thích ");
             sw.Close();
         }
-
+        private void post_text()
+        {
+            string filepath = $"{address}users\\{lb_username.Text}";
+            StreamWriter sw = new StreamWriter($"{address}users\\{lb_username.Text}\\post\\post.txt", true);
+            if (richTextBox1.Text == null)
+            {
+                richTextBox1.Text = " ";
+            }
+            sw.WriteLine(lb_username.Text + '\t'
+                        + btn_post.Tag.ToString() + '\t'
+                        + cb_quyen.Text + '\t'
+                        + $"{date.Day} thg {date.Month}, {date.Year}" + '\t'
+                        + richTextBox1.Text + '\t'
+                        + "" + '\t'
+                        + "Thích ");
+            sw.Close();
+        }
         private void btn_post_Click(object sender, EventArgs e)
         {
             //i = 0;
@@ -287,7 +350,7 @@ namespace Do_an
                 pic_background.Tag = "0";
                 picProfile2.Tag = "0";
             }
-            if (btn_post.Tag.ToString() == "video")
+            else if (btn_post.Tag.ToString() == "video")
             {
                 feeds_video dv = new feeds_video
                 {
@@ -301,6 +364,20 @@ namespace Do_an
                 };
                 post_video();
 
+                if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
+                else { flowLayoutPanel2.Controls.Add(dv); }
+            }
+            else if(btn_post.Tag.ToString() == "Text")
+            {
+                feeds_text dv = new feeds_text
+                {
+                    User = picProfile2.Image,
+                    username = lb_username.Text,
+                    text = richTextBox1.Text,
+                    date = $"{date.Day} thg {date.Month}, {date.Year}",
+                    Tag = richTextBox1.Text
+                };
+                post_text();
                 if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
                 else { flowLayoutPanel2.Controls.Add(dv); }
             }
@@ -343,6 +420,11 @@ namespace Do_an
         private void btn_friend_Click(object sender, EventArgs e)
         {
             panel_friend.Visible = true;
+        }
+
+        private void link_xóa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            video.URL = null;   pictureBox3.Image = null;   btn_post.Tag = "Text";  video.Visible = false;  pictureBox3.Visible = false;
         }
     }
 }

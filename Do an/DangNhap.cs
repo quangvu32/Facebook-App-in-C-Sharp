@@ -6,9 +6,11 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Do_an
 {
@@ -17,11 +19,21 @@ namespace Do_an
         DataTable dt = new DataTable();
         DateTime date = DateTime.Now;
         string username = "";
-
-        string address = "E:\\LapTrinh\\PROJECT\\c#\\Do an\\Do an\\";
+        static string fileLocation()
+        {
+            string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
+            string parentFolder = Directory.GetParent(projectFolder).FullName;
+            string projectFolderPath = Directory.GetParent(parentFolder).FullName;
+            string parent = Directory.GetParent(projectFolderPath).FullName;
+            return parent;
+        }
+        
+        public static string address = $"{fileLocation()}\\";
+        
         public DangNhap()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
         private void DangNhap_Load(object sender, EventArgs e)
         {
@@ -39,44 +51,8 @@ namespace Do_an
             return str[1];
         }
         #region Tìm user qua database
-        /*void Readfile()
+        private void Readfile()
         {
-            dt = new DataTable();
-            dt.Columns.Add("Name", typeof(string)); ;
-            dt.Columns.Add("Email", typeof(string));
-            dt.Columns.Add("Password", typeof(string));
-            dt.Columns.Add("Birth", typeof(string));
-            dt.Columns.Add("Sex", typeof(string));
-            dt.Columns.Add("Profile", typeof(string));
-            dt.Columns.Add("Background", typeof(string));
-            string tenfile = "user.txt";
-            FileInfo f = new FileInfo(tenfile);
-      
-            if (f.Exists)
-            {
-                StreamReader sr = new StreamReader(tenfile);
-                
-                string str;
-                while ((str = sr.ReadLine()) != null)
-                {
-                    string[] st = str.Split('\t');
-                    dt.Rows.Add(st[0], st[1], st[2], st[3], st[4], st[5], st[6]);
-                }
-                
-                sr.Close();
-            }
-            dataGridView1.DataSource = dt;
-            dataGridView1.Columns[0].HeaderText = "Name";
-            dataGridView1.Columns[1].HeaderText = "email";
-            dataGridView1.Columns[2].HeaderText = "password";
-            dataGridView1.Columns[3].HeaderText = "Birth";
-            dataGridView1.Columns[4].HeaderText = "Sex";
-            dataGridView1.Columns[5].HeaderText = "Profile";
-            dataGridView1.Columns[6].HeaderText = "Background";
-        }*/
-        private bool UserExists(string email, string password)
-        {
-            //Kiểm email và password
             string tenfile = "user.txt";
             FileInfo f = new FileInfo(tenfile);
             if (f.Exists)
@@ -87,9 +63,29 @@ namespace Do_an
                 while ((str = sr.ReadLine()) != null)
                 {
                     string[] st = str.Split('\t');
-                    if (email == st[1] && password == st[2])
-                    {          
+                    if (txt_email_DN.Text == st[1])
+                    {
                         username = st[0];
+                    }
+                }
+                sr.Close();
+            }
+        }
+        private bool UserExists(string password)
+        {
+            //Kiểm email và password
+            Readfile();
+            string tenfile = $"{address}users\\{username}\\thongtin.txt";
+            FileInfo f = new FileInfo(tenfile);
+            if (f.Exists)
+            {
+                StreamReader sr = new StreamReader(tenfile);
+
+                string str;
+                while ((str = sr.ReadLine()) != null)
+                {
+                    if (password == str)
+                    {          
                         return true;
                     }
                 }
@@ -116,13 +112,12 @@ namespace Do_an
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (UserExists(email, password))
+            else if (UserExists(password))
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form1 f1 = new Form1(username);
                 f1.Show();
-                Close();
-                
+                Hide();
 
                 //StreamReader r = new StreamReader()
             }
@@ -140,7 +135,13 @@ namespace Do_an
             }    
         }
         #endregion
+        private void copyFile(string source, string destination)
+        {
+            string filename = Path.GetFileName(source);
+            string destinationFilePath = Path.Combine(destination, filename);
 
+            File.Copy(source, destinationFilePath, true);
+        }
         #region Đăng ký
         private void btn_DK_Click(object sender, EventArgs e)
         {
@@ -217,10 +218,9 @@ namespace Do_an
                 Directory.CreateDirectory($"{address}users\\{ten}\\chat");
                 w = new StreamWriter($"{address}users\\{ten}\\post\\chat.txt");
                 w.Close();
-
+                copyFile("profile.jpg", $"{address}users\\{ten}\\post\\");
+                copyFile("gray.png", $"{address}users\\{ten}\\post\\");
                 //Readfile(ten, email, mk, birth, sx, "profile.jpg", "gray.png");
-                dataGridView1.Update();
-                dataGridView1.Refresh();
             }
             else MessageBox.Show("Bạn chưa nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -339,6 +339,11 @@ namespace Do_an
         {
             pass_forgot f = new pass_forgot();
             f.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

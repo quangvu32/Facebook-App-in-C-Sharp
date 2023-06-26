@@ -15,16 +15,7 @@ namespace Do_an
 {
     public partial class feeds_video : UserControl
     {
-        static string fileLocation()
-        {
-            string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
-            string parentFolder = Directory.GetParent(projectFolder).FullName;
-            string projectFolderPath = Directory.GetParent(parentFolder).FullName;
-            string parent = Directory.GetParent(projectFolderPath).FullName;
-            string parent2 = Directory.GetParent(parent).FullName;
-            return parent2;
-        }
-        string path = $"{fileLocation()}";
+        string path = Form1.path;
         private string _reaction;
         private string _username;
         private string _text;

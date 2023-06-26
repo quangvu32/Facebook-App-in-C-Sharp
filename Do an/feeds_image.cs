@@ -15,16 +15,7 @@ namespace Do_an
 {
     public partial class feeds_image : UserControl
     {
-        static string fileLocation()
-        {
-            string projectFolder = AppDomain.CurrentDomain.BaseDirectory;
-            string parentFolder = Directory.GetParent(projectFolder).FullName;
-            string projectFolderPath = Directory.GetParent(parentFolder).FullName;
-            string parent = Directory.GetParent(projectFolderPath).FullName;
-            string parent2 = Directory.GetParent(parent).FullName;
-            return parent2;
-        }
-        string path = $"{fileLocation()}";
+        string path = Form1.path;
         public feeds_image()
         {
             InitializeComponent();
@@ -75,7 +66,6 @@ namespace Do_an
             get { return _tag; }
             set { _tag = value; pictureBox1.Tag = value; }
         }
-
         private void feeds_image_Load(object sender, EventArgs e)
         {
             panel_react.Visible = false;
@@ -89,6 +79,7 @@ namespace Do_an
                 case "Buồn": { pictureBox2.Image = Image.FromFile($"{path}\\icon\\emoji\\sad.ico"); break; }
                 case "Phẫn nộ": { pictureBox2.Image = Image.FromFile($"{path}\\icon\\emoji\\angry.ico"); break; }
             }
+            richTextBox1.ForeColor = Color.Black;
         }
         private void ReadFile()
         {
