@@ -48,23 +48,28 @@ namespace Do_an
                     string[] st = a.Split('\t');
                     if (txt_email.Text == st[1])
                     {
+                        string p;
                         user = st[0];
+                        StreamReader b = new StreamReader($"{Form1.address}users\\{st[0]}\\profile.txt");
+                        p = b.ReadLine();
                         if (txt_email.Text[0] == '0')
                         {
                             label3.Text = "Gửi qua số điện thoại"; label6.Text = st[1]; label6.Tag = "sdt";
-                            panel1.Visible = false; panel2.Visible = true;
+                            panel1.Visible = false; panel2.Visible = true; label9.Text = user; 
+                            pic_user.Image = Image.FromFile($"{Form1.address}users\\{st[0]}\\post\\{p}");
                             return;
                         }
                         else
                         {
                             label3.Text = "Gửi qua mail"; label6.Text = st[1]; label6.Tag = "mail";
-                            panel1.Visible = false; panel2.Visible = true;
+                            panel1.Visible = false; panel2.Visible = true; label9.Text = user; 
+                            pic_user.Image = Image.FromFile($"{Form1.address}users\\{st[0]}\\post\\{p}");
                             return;
                         }
                     }
                 }
-                pic_user.Image = Image.FromFile($"{Form1.address}users//{user}//profile.txt");
-                label9.Text = user;
+                
+                
                 
                 sr.Close();
                 if (txt_email.Text == "Email hoặc số điện thoại")

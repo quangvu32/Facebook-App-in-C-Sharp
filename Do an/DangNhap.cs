@@ -218,8 +218,16 @@ namespace Do_an
                 Directory.CreateDirectory($"{address}users\\{ten}\\chat");
                 w = new StreamWriter($"{address}users\\{ten}\\post\\chat.txt");
                 w.Close();
+                Directory.CreateDirectory($"{address}users\\{ten}\\friend");
+                w = new StreamWriter($"{address}users\\{ten}\\post\\friend.txt");
+                w.Close();
+                Directory.CreateDirectory($"{address}users\\{ten}\\notification");
+                w = new StreamWriter($"{address}users\\{ten}\\post\\notification.txt");
+                w.Close();
+
                 copyFile("profile.jpg", $"{address}users\\{ten}\\post\\");
                 copyFile("gray.png", $"{address}users\\{ten}\\post\\");
+
                 //Readfile(ten, email, mk, birth, sx, "profile.jpg", "gray.png");
             }
             else MessageBox.Show("Bạn chưa nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

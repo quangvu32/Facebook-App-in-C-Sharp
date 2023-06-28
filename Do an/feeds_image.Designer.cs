@@ -42,9 +42,10 @@
             this.pic_love = new System.Windows.Forms.PictureBox();
             this.pic_like = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pic_user = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel_react.SuspendLayout();
@@ -55,9 +56,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_care)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_love)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_like)).BeginInit();
+            this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(314, 432);
+            this.label1.Location = new System.Drawing.Point(321, 432);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 21);
             this.label1.TabIndex = 7;
@@ -96,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(163, 432);
+            this.label3.Location = new System.Drawing.Point(168, 432);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 21);
             this.label3.TabIndex = 8;
@@ -112,6 +114,8 @@
             this.lb_reaction.TabIndex = 9;
             this.lb_reaction.Text = "Thích ";
             this.lb_reaction.Click += new System.EventHandler(this.lb_reaction_Click);
+            this.lb_reaction.MouseEnter += new System.EventHandler(this.lb_reaction_MouseEnter_1);
+            this.lb_reaction.MouseLeave += new System.EventHandler(this.lb_reaction_MouseLeave_1);
             // 
             // panel_react
             // 
@@ -126,7 +130,6 @@
             this.panel_react.Name = "panel_react";
             this.panel_react.Size = new System.Drawing.Size(324, 43);
             this.panel_react.TabIndex = 10;
-            this.panel_react.Leave += new System.EventHandler(this.panel_react_Leave);
             // 
             // pic_angry
             // 
@@ -216,12 +219,35 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(0, 71);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(388, 68);
+            this.richTextBox1.Size = new System.Drawing.Size(402, 68);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
+            // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2CustomGradientPanel1.BorderRadius = 10;
+            this.guna2CustomGradientPanel1.BorderThickness = 1;
+            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.label3);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox4);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(402, 465);
+            this.guna2CustomGradientPanel1.TabIndex = 15;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Do_an.Properties.Resources.close1;
+            this.pictureBox4.Location = new System.Drawing.Point(369, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -243,16 +269,6 @@
             this.pic_user.TabIndex = 11;
             this.pic_user.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Do_an.Properties.Resources.close1;
-            this.pictureBox4.Location = new System.Drawing.Point(355, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(187, 35);
@@ -266,7 +282,7 @@
             this.pictureBox1.ImageRotate = 0F;
             this.pictureBox1.Location = new System.Drawing.Point(0, 146);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(388, 280);
+            this.pictureBox1.Size = new System.Drawing.Size(402, 280);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -281,15 +297,13 @@
             this.Controls.Add(this.pic_user);
             this.Controls.Add(this.panel_react);
             this.Controls.Add(this.lb_reaction);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lb_date);
             this.Controls.Add(this.lb_username);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "feeds_image";
-            this.Size = new System.Drawing.Size(388, 465);
+            this.Size = new System.Drawing.Size(402, 465);
             this.Load += new System.EventHandler(this.feeds_image_Load);
             this.panel_react.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_angry)).EndInit();
@@ -299,9 +313,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_care)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_love)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_like)).EndInit();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -329,5 +345,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
     }
 }

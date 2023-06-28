@@ -33,6 +33,17 @@
             this.lb_reaction = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_react = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lb_username = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_end = new System.Windows.Forms.Label();
+            this.lb_start = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.video = new AxWMPLib.AxWindowsMediaPlayer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pic_angry = new System.Windows.Forms.PictureBox();
             this.pic_sad = new System.Windows.Forms.PictureBox();
             this.pic_wow = new System.Windows.Forms.PictureBox();
@@ -40,24 +51,19 @@
             this.pic_care = new System.Windows.Forms.PictureBox();
             this.pic_love = new System.Windows.Forms.PictureBox();
             this.pic_like = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lb_username = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_end = new System.Windows.Forms.Label();
+            this.slider = new System.Windows.Forms.PictureBox();
             this.pic_play = new System.Windows.Forms.PictureBox();
-            this.lb_start = new System.Windows.Forms.Label();
             this.pic_replay = new System.Windows.Forms.PictureBox();
             this.pic_pause = new System.Windows.Forms.PictureBox();
-            this.video = new AxWMPLib.AxWindowsMediaPlayer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pic_user = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.slider = new System.Windows.Forms.PictureBox();
+            this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.panel_react.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.video)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_angry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_sad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_wow)).BeginInit();
@@ -65,16 +71,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_care)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_love)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_like)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_replay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_pause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.video)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_reaction
@@ -87,6 +90,8 @@
             this.lb_reaction.TabIndex = 9;
             this.lb_reaction.Text = "Thích ";
             this.lb_reaction.Click += new System.EventHandler(this.lb_reaction_Click);
+            this.lb_reaction.MouseEnter += new System.EventHandler(this.lb_reaction_MouseEnter);
+            this.lb_reaction.MouseLeave += new System.EventHandler(this.lb_reaction_MouseLeave);
             // 
             // label3
             // 
@@ -112,6 +117,119 @@
             this.panel_react.Size = new System.Drawing.Size(324, 43);
             this.panel_react.TabIndex = 20;
             this.panel_react.Leave += new System.EventHandler(this.panel_react_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(324, 436);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 21);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Chia sẻ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(99, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "label2";
+            // 
+            // lb_username
+            // 
+            this.lb_username.AutoSize = true;
+            this.lb_username.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_username.Location = new System.Drawing.Point(97, 15);
+            this.lb_username.Name = "lb_username";
+            this.lb_username.Size = new System.Drawing.Size(61, 25);
+            this.lb_username.TabIndex = 13;
+            this.lb_username.Text = "label1";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(0, 69);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(402, 52);
+            this.richTextBox1.TabIndex = 23;
+            this.richTextBox1.Text = "";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.guna2TrackBar1);
+            this.panel1.Controls.Add(this.lb_end);
+            this.panel1.Controls.Add(this.pic_play);
+            this.panel1.Controls.Add(this.lb_start);
+            this.panel1.Controls.Add(this.pic_replay);
+            this.panel1.Controls.Add(this.pic_pause);
+            this.panel1.Location = new System.Drawing.Point(0, 392);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(402, 38);
+            this.panel1.TabIndex = 27;
+            // 
+            // lb_end
+            // 
+            this.lb_end.AutoSize = true;
+            this.lb_end.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_end.ForeColor = System.Drawing.Color.White;
+            this.lb_end.Location = new System.Drawing.Point(352, 8);
+            this.lb_end.Name = "lb_end";
+            this.lb_end.Size = new System.Drawing.Size(43, 17);
+            this.lb_end.TabIndex = 31;
+            this.lb_end.Text = "label5";
+            // 
+            // lb_start
+            // 
+            this.lb_start.AutoSize = true;
+            this.lb_start.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_start.ForeColor = System.Drawing.Color.White;
+            this.lb_start.Location = new System.Drawing.Point(3, 8);
+            this.lb_start.Name = "lb_start";
+            this.lb_start.Size = new System.Drawing.Size(43, 17);
+            this.lb_start.TabIndex = 30;
+            this.lb_start.Text = "label4";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2CustomGradientPanel1.BorderRadius = 10;
+            this.guna2CustomGradientPanel1.BorderThickness = 1;
+            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox4);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(402, 465);
+            this.guna2CustomGradientPanel1.TabIndex = 31;
+            // 
+            // video
+            // 
+            this.video.Enabled = true;
+            this.video.Location = new System.Drawing.Point(0, 127);
+            this.video.Name = "video";
+            this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
+            this.video.Size = new System.Drawing.Size(402, 245);
+            this.video.TabIndex = 21;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(6, 436);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // pic_angry
             // 
@@ -197,76 +315,24 @@
             this.pic_like.TabStop = false;
             this.pic_like.Click += new System.EventHandler(this.pic_like_Click);
             // 
-            // label1
+            // slider
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(311, 436);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 21);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Chia sẻ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(99, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "label2";
-            // 
-            // lb_username
-            // 
-            this.lb_username.AutoSize = true;
-            this.lb_username.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_username.Location = new System.Drawing.Point(97, 15);
-            this.lb_username.Name = "lb_username";
-            this.lb_username.Size = new System.Drawing.Size(61, 25);
-            this.lb_username.TabIndex = 13;
-            this.lb_username.Text = "label1";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 69);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(388, 52);
-            this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Controls.Add(this.lb_end);
-            this.panel1.Controls.Add(this.pic_play);
-            this.panel1.Controls.Add(this.lb_start);
-            this.panel1.Controls.Add(this.pic_replay);
-            this.panel1.Controls.Add(this.pic_pause);
-            this.panel1.Location = new System.Drawing.Point(0, 392);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(388, 38);
-            this.panel1.TabIndex = 27;
-            // 
-            // lb_end
-            // 
-            this.lb_end.AutoSize = true;
-            this.lb_end.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_end.ForeColor = System.Drawing.Color.White;
-            this.lb_end.Location = new System.Drawing.Point(342, 8);
-            this.lb_end.Name = "lb_end";
-            this.lb_end.Size = new System.Drawing.Size(43, 17);
-            this.lb_end.TabIndex = 31;
-            this.lb_end.Text = "label5";
+            this.slider.BackColor = System.Drawing.Color.Black;
+            this.slider.Location = new System.Drawing.Point(0, 372);
+            this.slider.Name = "slider";
+            this.slider.Size = new System.Drawing.Size(402, 20);
+            this.slider.TabIndex = 30;
+            this.slider.TabStop = false;
+            this.slider.Paint += new System.Windows.Forms.PaintEventHandler(this.slider_Paint);
+            this.slider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.slider_MouseDown);
+            this.slider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.slider_MouseMove);
+            this.slider.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slider_MouseUp);
             // 
             // pic_play
             // 
             this.pic_play.BackColor = System.Drawing.Color.Transparent;
             this.pic_play.Image = global::Do_an.Properties.Resources.Play_Button_Png;
-            this.pic_play.Location = new System.Drawing.Point(170, 3);
+            this.pic_play.Location = new System.Drawing.Point(182, 1);
             this.pic_play.Name = "pic_play";
             this.pic_play.Size = new System.Drawing.Size(35, 35);
             this.pic_play.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -274,22 +340,11 @@
             this.pic_play.TabStop = false;
             this.pic_play.Click += new System.EventHandler(this.pic_play_Click);
             // 
-            // lb_start
-            // 
-            this.lb_start.AutoSize = true;
-            this.lb_start.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_start.ForeColor = System.Drawing.Color.White;
-            this.lb_start.Location = new System.Drawing.Point(3, 8);
-            this.lb_start.Name = "lb_start";
-            this.lb_start.Size = new System.Drawing.Size(43, 17);
-            this.lb_start.TabIndex = 30;
-            this.lb_start.Text = "label4";
-            // 
             // pic_replay
             // 
             this.pic_replay.BackColor = System.Drawing.Color.Transparent;
             this.pic_replay.Image = global::Do_an.Properties.Resources.pngaaa_com_1451153;
-            this.pic_replay.Location = new System.Drawing.Point(170, 3);
+            this.pic_replay.Location = new System.Drawing.Point(182, 1);
             this.pic_replay.Name = "pic_replay";
             this.pic_replay.Size = new System.Drawing.Size(35, 35);
             this.pic_replay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -301,31 +356,13 @@
             // 
             this.pic_pause.BackColor = System.Drawing.Color.Transparent;
             this.pic_pause.Image = global::Do_an.Properties.Resources.White_Pause_Button_Symbol_Png;
-            this.pic_pause.Location = new System.Drawing.Point(170, 3);
+            this.pic_pause.Location = new System.Drawing.Point(182, 1);
             this.pic_pause.Name = "pic_pause";
             this.pic_pause.Size = new System.Drawing.Size(35, 35);
             this.pic_pause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_pause.TabIndex = 26;
             this.pic_pause.TabStop = false;
             this.pic_pause.Click += new System.EventHandler(this.pic_pause_Click);
-            // 
-            // video
-            // 
-            this.video.Enabled = true;
-            this.video.Location = new System.Drawing.Point(0, 127);
-            this.video.Name = "video";
-            this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
-            this.video.Size = new System.Drawing.Size(388, 245);
-            this.video.TabIndex = 21;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 436);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
             // 
             // pic_user
             // 
@@ -341,7 +378,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Do_an.Properties.Resources.close1;
-            this.pictureBox4.Location = new System.Drawing.Point(355, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(365, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -357,47 +394,44 @@
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
-            // timer1
+            // guna2TrackBar1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // slider
-            // 
-            this.slider.BackColor = System.Drawing.Color.Black;
-            this.slider.Location = new System.Drawing.Point(0, 372);
-            this.slider.Name = "slider";
-            this.slider.Size = new System.Drawing.Size(388, 20);
-            this.slider.TabIndex = 30;
-            this.slider.TabStop = false;
-            this.slider.Paint += new System.Windows.Forms.PaintEventHandler(this.slider_Paint);
-            this.slider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.slider_MouseDown);
-            this.slider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.slider_MouseMove);
-            this.slider.MouseUp += new System.Windows.Forms.MouseEventHandler(this.slider_MouseUp);
+            this.guna2TrackBar1.BackColor = System.Drawing.Color.Black;
+            this.guna2TrackBar1.FillColor = System.Drawing.Color.Silver;
+            this.guna2TrackBar1.Location = new System.Drawing.Point(242, 6);
+            this.guna2TrackBar1.Name = "guna2TrackBar1";
+            this.guna2TrackBar1.Size = new System.Drawing.Size(101, 23);
+            this.guna2TrackBar1.TabIndex = 32;
+            this.guna2TrackBar1.ThumbColor = System.Drawing.Color.White;
+            this.guna2TrackBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2TrackBar1_Scroll);
             // 
             // feeds_video
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel_react);
             this.Controls.Add(this.slider);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pic_user);
             this.Controls.Add(this.video);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lb_reaction);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_username);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "feeds_video";
-            this.Size = new System.Drawing.Size(388, 465);
+            this.Size = new System.Drawing.Size(402, 465);
             this.Load += new System.EventHandler(this.feeds_video_Load);
             this.panel_react.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.video)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_angry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_sad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_wow)).EndInit();
@@ -405,17 +439,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_care)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_love)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_like)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.slider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_replay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_pause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.video)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +480,7 @@
         private System.Windows.Forms.Label lb_end;
         private System.Windows.Forms.Label lb_start;
         private System.Windows.Forms.PictureBox slider;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
     }
 }

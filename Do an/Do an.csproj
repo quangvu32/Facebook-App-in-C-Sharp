@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="background.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="background.Designer.cs">
+      <DependentUpon>background.cs</DependentUpon>
+    </Compile>
     <Compile Include="chat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,14 +118,29 @@
     <Compile Include="NewFolder1\messager.Designer.cs">
       <DependentUpon>messager.cs</DependentUpon>
     </Compile>
+    <Compile Include="notification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="notification.Designer.cs">
+      <DependentUpon>notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="pass_forgot.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="pass_forgot.Designer.cs">
       <DependentUpon>pass_forgot.cs</DependentUpon>
     </Compile>
+    <Compile Include="post.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="post.Designer.cs">
+      <DependentUpon>post.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="background.resx">
+      <DependentUpon>background.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chat.resx">
       <DependentUpon>chat.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,8 +165,14 @@
     <EmbeddedResource Include="NewFolder1\messager.resx">
       <DependentUpon>messager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="notification.resx">
+      <DependentUpon>notification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pass_forgot.resx">
       <DependentUpon>pass_forgot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="post.resx">
+      <DependentUpon>post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -294,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngaaa.com-1451153.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

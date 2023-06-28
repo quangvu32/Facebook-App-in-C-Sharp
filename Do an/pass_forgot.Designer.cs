@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pic_user = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_huy2 = new System.Windows.Forms.Button();
             this.btn_tiep2 = new System.Windows.Forms.Button();
@@ -58,29 +60,37 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.pic_user = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel13);
+            this.panel1.Controls.Add(this.panel12);
             this.panel1.Controls.Add(this.btn_tiep);
             this.panel1.Controls.Add(this.btn_huy);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_email);
-            this.panel1.Location = new System.Drawing.Point(657, 374);
+            this.panel1.Location = new System.Drawing.Point(-1, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 263);
+            this.panel1.Size = new System.Drawing.Size(499, 218);
             this.panel1.TabIndex = 0;
             // 
             // btn_tiep
@@ -88,7 +98,7 @@
             this.btn_tiep.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_tiep.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tiep.ForeColor = System.Drawing.Color.White;
-            this.btn_tiep.Location = new System.Drawing.Point(383, 187);
+            this.btn_tiep.Location = new System.Drawing.Point(383, 166);
             this.btn_tiep.Name = "btn_tiep";
             this.btn_tiep.Size = new System.Drawing.Size(107, 44);
             this.btn_tiep.TabIndex = 5;
@@ -101,7 +111,7 @@
             this.btn_huy.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_huy.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_huy.ForeColor = System.Drawing.Color.White;
-            this.btn_huy.Location = new System.Drawing.Point(261, 187);
+            this.btn_huy.Location = new System.Drawing.Point(260, 166);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(107, 44);
             this.btn_huy.TabIndex = 4;
@@ -134,7 +144,7 @@
             this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_email.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.ForeColor = System.Drawing.Color.Gray;
-            this.txt_email.Location = new System.Drawing.Point(0, 115);
+            this.txt_email.Location = new System.Drawing.Point(3, 110);
             this.txt_email.Multiline = true;
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(358, 45);
@@ -147,16 +157,39 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.pic_user);
+            this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.btn_huy2);
             this.panel2.Controls.Add(this.btn_tiep2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(12, 360);
+            this.panel2.Location = new System.Drawing.Point(-1, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(499, 263);
+            this.panel2.Size = new System.Drawing.Size(499, 218);
             this.panel2.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(115, 58);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(21, 32);
+            this.label9.TabIndex = 14;
+            this.label9.Text = ".";
+            // 
+            // pic_user
+            // 
+            this.pic_user.ImageRotate = 0F;
+            this.pic_user.Location = new System.Drawing.Point(22, 45);
+            this.pic_user.Name = "pic_user";
+            this.pic_user.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pic_user.Size = new System.Drawing.Size(80, 80);
+            this.pic_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_user.TabIndex = 13;
+            this.pic_user.TabStop = false;
             // 
             // label6
             // 
@@ -173,7 +206,7 @@
             this.btn_huy2.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_huy2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_huy2.ForeColor = System.Drawing.Color.White;
-            this.btn_huy2.Location = new System.Drawing.Point(177, 202);
+            this.btn_huy2.Location = new System.Drawing.Point(186, 166);
             this.btn_huy2.Name = "btn_huy2";
             this.btn_huy2.Size = new System.Drawing.Size(191, 44);
             this.btn_huy2.TabIndex = 11;
@@ -186,7 +219,7 @@
             this.btn_tiep2.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_tiep2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tiep2.ForeColor = System.Drawing.Color.White;
-            this.btn_tiep2.Location = new System.Drawing.Point(383, 202);
+            this.btn_tiep2.Location = new System.Drawing.Point(389, 166);
             this.btn_tiep2.Name = "btn_tiep2";
             this.btn_tiep2.Size = new System.Drawing.Size(107, 44);
             this.btn_tiep2.TabIndex = 10;
@@ -217,15 +250,17 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.txt_code);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(12, 52);
+            this.panel3.Location = new System.Drawing.Point(-1, 46);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(499, 263);
+            this.panel3.Size = new System.Drawing.Size(499, 218);
             this.panel3.TabIndex = 2;
             // 
             // txt_code
@@ -233,7 +268,7 @@
             this.txt_code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_code.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_code.ForeColor = System.Drawing.Color.Gray;
-            this.txt_code.Location = new System.Drawing.Point(0, 95);
+            this.txt_code.Location = new System.Drawing.Point(3, 95);
             this.txt_code.Multiline = true;
             this.txt_code.Name = "txt_code";
             this.txt_code.Size = new System.Drawing.Size(151, 45);
@@ -257,7 +292,7 @@
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(260, 202);
+            this.button1.Location = new System.Drawing.Point(249, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 44);
             this.button1.TabIndex = 11;
@@ -270,7 +305,7 @@
             this.button2.BackColor = System.Drawing.Color.DodgerBlue;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(383, 202);
+            this.button2.Location = new System.Drawing.Point(378, 164);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 44);
             this.button2.TabIndex = 10;
@@ -301,14 +336,16 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.panel9);
+            this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.txt_newPass);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label11);
-            this.panel4.Location = new System.Drawing.Point(657, 65);
+            this.panel4.Location = new System.Drawing.Point(-1, 46);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(499, 263);
+            this.panel4.Size = new System.Drawing.Size(499, 218);
             this.panel4.TabIndex = 3;
             // 
             // txt_newPass
@@ -316,7 +353,7 @@
             this.txt_newPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_newPass.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_newPass.ForeColor = System.Drawing.Color.Gray;
-            this.txt_newPass.Location = new System.Drawing.Point(0, 95);
+            this.txt_newPass.Location = new System.Drawing.Point(3, 96);
             this.txt_newPass.Multiline = true;
             this.txt_newPass.Name = "txt_newPass";
             this.txt_newPass.Size = new System.Drawing.Size(235, 45);
@@ -330,7 +367,7 @@
             this.button3.BackColor = System.Drawing.Color.DodgerBlue;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(260, 202);
+            this.button3.Location = new System.Drawing.Point(259, 164);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 44);
             this.button3.TabIndex = 11;
@@ -343,7 +380,7 @@
             this.button4.BackColor = System.Drawing.Color.DodgerBlue;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(383, 202);
+            this.button4.Location = new System.Drawing.Point(383, 164);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(107, 44);
             this.button4.TabIndex = 10;
@@ -374,7 +411,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Do_an.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(482, 11);
+            this.pictureBox3.Location = new System.Drawing.Point(460, 11);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 32);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -409,31 +446,75 @@
             this.guna2DragControl1.TargetControl = this.panel6;
             this.guna2DragControl1.TransparentWhileDrag = false;
             // 
-            // pic_user
+            // panel5
             // 
-            this.pic_user.ImageRotate = 0F;
-            this.pic_user.Location = new System.Drawing.Point(22, 45);
-            this.pic_user.Name = "pic_user";
-            this.pic_user.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pic_user.Size = new System.Drawing.Size(80, 80);
-            this.pic_user.TabIndex = 13;
-            this.pic_user.TabStop = false;
+            this.panel5.BackColor = System.Drawing.Color.LightGray;
+            this.panel5.Location = new System.Drawing.Point(3, 164);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(499, 1);
+            this.panel5.TabIndex = 14;
             // 
-            // label9
+            // panel7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(115, 58);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(21, 32);
-            this.label9.TabIndex = 14;
-            this.label9.Text = ".";
+            this.panel7.BackColor = System.Drawing.Color.LightGray;
+            this.panel7.Location = new System.Drawing.Point(0, 45);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(499, 1);
+            this.panel7.TabIndex = 15;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.LightGray;
+            this.panel8.Location = new System.Drawing.Point(0, 45);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(499, 1);
+            this.panel8.TabIndex = 16;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.LightGray;
+            this.panel9.Location = new System.Drawing.Point(3, 164);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(499, 1);
+            this.panel9.TabIndex = 16;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.LightGray;
+            this.panel10.Location = new System.Drawing.Point(0, 38);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(499, 1);
+            this.panel10.TabIndex = 17;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.LightGray;
+            this.panel11.Location = new System.Drawing.Point(0, 131);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(499, 1);
+            this.panel11.TabIndex = 16;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.LightGray;
+            this.panel12.Location = new System.Drawing.Point(0, 35);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(499, 1);
+            this.panel12.TabIndex = 18;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.LightGray;
+            this.panel13.Location = new System.Drawing.Point(0, 166);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(499, 1);
+            this.panel13.TabIndex = 19;
             // 
             // pass_forgot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 693);
+            this.ClientSize = new System.Drawing.Size(497, 264);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -449,6 +530,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -456,7 +538,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,5 +575,13 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pic_user;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel13;
     }
 }
