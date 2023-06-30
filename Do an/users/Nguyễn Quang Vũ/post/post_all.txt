@@ -1,0 +1,3 @@
+John Cena	Text	Bạn bè	26 thg 6, 2023	Chán quá đi		Buồn
+John Cena	image	Bạn bè	24 thg 6, 2023	John Wick nè, hihi	74387045_2494802367223831_1606884652847464448_n.jpg	Thích
+John Cena	video	Bạn bè	24 thg 6, 2023	Mới nhận lương về kiểu:	64578924_2679829795363937_1944230587074084864_n.mp4	Thích 

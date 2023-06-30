@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Do_an
         public event EventHandler ButtonClicked;
         public event EventHandler ButtonClicked2;
         public event EventHandler ButtonClicked3;
+        DateTime date = DateTime.Now;
         public friend_find()
         {
             InitializeComponent();
@@ -66,7 +68,7 @@ namespace Do_an
         public void open_item()
         {
             string tenfile = Form1.address;
-            panel1.Visible = false;
+            panel1.Visible = false;panel2.Visible = true;panel3.Visible = false;
             StreamWriter sw = new StreamWriter($"{tenfile}users\\{Form1.username_get}\\friend\\sent_request.txt", true);
             sw.WriteLine(label1.Text + "\t" + "sent");
             sw.Close();
@@ -74,8 +76,9 @@ namespace Do_an
             sw.WriteLine(Form1.username_get + "\t" + "request");
             sw.Close();
             sw = new StreamWriter($"{tenfile}users\\{label1.Text}\\notification\\notification.txt", true);
-            sw.WriteLine(Form1.username_get + "\t" + "đã gửi lời mời kết bạn");
+            sw.WriteLine(Form1.username_get + "\t" + "đã gửi lời mời kết bạn" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
             sw.Close();
+
         }
 
         private void Readfile_sent()
@@ -138,12 +141,41 @@ namespace Do_an
             sw.WriteLine(Form1.username_get);
             sw.Close();
             sw = new StreamWriter($"{tenfile}users\\{label1.Text}\\notification\\notification.txt", true);
-            sw.WriteLine(Form1.username_get + "\t" + "đã chấp nhận lời kết bạn");
+            sw.WriteLine(Form1.username_get + "\t" + "đã chấp nhận lời mời kết bạn" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
             sw.Close();
             delete($"{tenfile}users\\{Form1.username_get}\\friend\\sent_request.txt", label1.Text + "\t" + "request");
             delete($"{tenfile}users\\{label1.Text}\\friend\\sent_request.txt", Form1.username_get + "\t" + "sent");
             label2.Text = "Đã kết bạn";
             panel3.Visible = false; panel2.Visible = true;
+        }
+        public event EventHandler ButtonClicked_delete2;
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ButtonClicked_delete2?.Invoke(this, EventArgs.Empty);
+        }
+        public void delete_request()
+        {
+            panel3.Visible = false; panel2.Visible = false;
+            string tenfile = Form1.address;
+            delete($"{tenfile}users\\{Form1.username_get}\\friend\\sent_request.txt", label1.Text + "\t" + "request");
+            delete($"{tenfile}users\\{label1.Text}\\friend\\sent_request.txt", Form1.username_get + "\t" + "sent");
+            delete($"{tenfile}users\\{Form1.username_get}\\notification\\notification.txt", label1.Text + "\t" + "đã gửi lời mời kết bạn" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
+            panel1.Visible = true;
+        }
+        public event EventHandler ButtonClicked_delete;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ButtonClicked_delete?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void delete_sent()
+        {
+            panel3.Visible=false; panel2.Visible=false;
+            string tenfile = Form1.address;
+            delete($"{tenfile}users\\{Form1.username_get}\\friend\\sent_request.txt", label1.Text + "\t" + "sent");
+            delete($"{tenfile}users\\{label1.Text}\\friend\\sent_request.txt", Form1.username_get + "\t" + "request");
+            delete($"{tenfile}users\\{label1.Text}\\notification\\notification.txt", Form1.username_get + "\t" + "đã gửi lời mời kết bạn" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
+            panel1.Visible = true;
         }
     }
 }

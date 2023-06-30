@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Management.Instrumentation;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Web.UI;
 using System.Windows.Forms;
@@ -23,7 +27,7 @@ namespace Do_an
             string projectFolderPath = Directory.GetParent(parentFolder).FullName;
             string parent = Directory.GetParent(projectFolderPath).FullName;
             return parent;
-        }  
+        }
         static string fileLocation2()
         {
             string parent2 = Directory.GetParent(fileLocation()).FullName;
@@ -32,13 +36,30 @@ namespace Do_an
 
         public static string address = $"{fileLocation()}\\";
         public static string path = $"{fileLocation2()}";
-        
+
 
         public Form1(string username)
         {
             InitializeComponent();
+            panel_post.Visible = false; panel_home.Visible = true; panel_profile.Visible = false; panel_friend.Visible = false; panel5.Visible = false;
             username_get = username;
             lb_username.Text = username;
+
+            picProfile2.Tag = "0";
+            pic_background.Tag = "0";
+            btn_post.Tag = "Text";
+            video.OpenStateChange += AxWindowsMediaPlayer1_OpenStateChange;
+            cb_quyen.Text = "Công khai";
+            video.uiMode = "none";
+            video.Visible = false;
+            pictureBox3.Visible = false;
+            flowLayoutPanel4.Visible = false;
+            flowLayoutPanel5.Visible = false;
+            flowLayoutPanel6.Visible = false;
+
+            guna2GradientButton2.FillColor = Color.Silver;
+            //guna2GradientButton1.FillColor = Color.WhiteSmoke;
+
         }
         private string _reaction;
         public string reaction
@@ -51,31 +72,38 @@ namespace Do_an
             DangNhap dn = new DangNhap();
             dn.Show();
             Dispose(true);
-            
+
             Close();
+        }
+        private void lb_dangxuat_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_dangxuat_MouseLeave(object sender, EventArgs e)
+        {
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            panel_post.Visible = false; panel_home.Visible = true;  panel_profile.Visible = false;  panel_friend.Visible = false;
-            btn_post.Tag = "Text";
-            video.OpenStateChange += AxWindowsMediaPlayer1_OpenStateChange;
-            cb_quyen.Text = "Công khai";
-            video.uiMode = "none";
-            video.Visible = false;
-            pictureBox3.Visible = false;
-            flowLayoutPanel4.Visible = false;
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel3.Controls.Clear();
+            flowLayoutPanel4.Controls.Clear();
+            flowLayoutPanel5.Controls.Clear();
 
-            picProfile2.Tag = "0";
-            pic_background.Tag = "0";
-            
-            Readfile_prof();
-            
-            picProfile.Image = btn_user.Image;
-            picProfile3.Image = btn_user.Image;
+            Readfile_prof();         
             Readfile_Profpost();
             Read_friend_request();
             Readfile_notif();
-
+            
+            post p = new post();
+            p.Image = read_profile(lb_username.Text);
+            p.ButtonClicked += button1_Click;
+            flowLayoutPanel1.Controls.Add(p);
+            Readfile_post();
+            picProfile.Image = btn_user.Image;
+            picProfile3.Image = btn_user.Image;
         }
         private void AxWindowsMediaPlayer1_OpenStateChange(object sender, AxWMPLib._WMPOCXEvents_OpenStateChangeEvent e)
         {
@@ -84,24 +112,101 @@ namespace Do_an
                 video.Ctlcontrols.pause();
             }
         }
-        string[] friend;
-        private void Readfile_friend()
+        List<int> listNumbers = new List<int>();//Create a list of random questions (no repeatable)
+        private void random(int posts)
         {
-            string tenfile = $"{address}users\\{lb_username.Text}\\friend\\friend.txt";
-            StreamReader r = new StreamReader(tenfile);
-            string str;  int i = 0;
-            while ((str = r.ReadLine()) != null)
+            listNumbers = new List<int>();
+            Random rnd = new Random();
+            int number;
+            for (int i = 0; i < posts; i++)
             {
-                friend[i] = str;
-                i++;
+                do
+                {
+                    number = rnd.Next(0, 4);
+                } while (listNumbers.Contains(number));
+                listNumbers.Add(number);
             }
+        }
+        List<string> friends = new List<string>();
+        private void friend_count()
+        {
+            friends = new List<string>();
+            string tenfile_friend = $"{address}users\\{lb_username.Text}\\friend\\friend.txt";
+            StreamReader r = new StreamReader(tenfile_friend);
+            string friend_name;
+            while ((friend_name = r.ReadLine()) != null)
+            {
+                friend fr = new friend();
+                fr.User = friend_name;
+                fr.profile = read_profile(friend_name);
+                friends.Add(friend_name);
+                if (flowLayoutPanel5.Controls.Count < 0) { flowLayoutPanel5.Controls.Clear(); }
+                else { flowLayoutPanel5.Controls.Add(fr); }
+            }
+            r.Close();
+        }
+        private Image cong_khai(string a)
+        {
+            if(a == "Bạn bè")
+            {
+                return Image.FromFile(Path.Combine($"{path}\\icon\\", "friend.png"));
+            }  
+            if(a == "Công khai")
+            {
+                return Image.FromFile(Path.Combine($"{path}\\icon\\", "world.png")); 
+            }    
+            return Image.FromFile(Path.Combine($"{path}\\icon\\", "lock.png"));
+        }
+        
+        private void get_posts()
+        {
+            File.WriteAllText($"{address}users\\{lb_username.Text}\\post\\post_all.txt", string.Empty);
+            random(4);
+            List<string> posts = new List<string>();
+            string tenfile_friend = $"{address}users\\{lb_username.Text}\\friend\\friend.txt";
+            StreamReader r = new StreamReader(tenfile_friend);
+            string friend_name;
+            if (friends.Count > 0)
+            {
+                while ((friend_name = r.ReadLine()) != null)
+                {
+                    string tenfile = $"{address}users\\{friend_name}\\post\\post.txt";
+                    StreamReader sr = new StreamReader(tenfile);
+                    string str;
+                    while ((str = sr.ReadLine()) != null)
+                    {
+                        posts.Add(str);
+                    }
+                    if (posts.Count < 0) { break; }
+                    else
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            StreamWriter sw = new StreamWriter($"{address}users\\{lb_username.Text}\\post\\post_all.txt", true);
+                            sw.WriteLine(posts[listNumbers[i]]);
+                            sw.Close();
+                        }
+                    }
+
+                    posts.Clear();
+                }
+            }
+            r.Close();
+        }
+        private Image read_profile(string name)
+        {
+            string profile = $"{address}users\\{name}\\profile.txt";
+            string image;
+            StreamReader r = new StreamReader(profile);
+            image = r.ReadLine();
+            r.Close();
+            Image a = Image.FromFile($"{address}users\\{name}\\post\\{image}");
+            return a;
         }
         private void Readfile_post()
         {
-            
-
-
-            string tenfile = $"{address}users\\{lb_username.Text}\\post\\post.txt";
+            //get_posts();
+            string tenfile = $"{address}users\\{lb_username.Text}\\post\\post_all.txt";
             FileInfo f = new FileInfo(tenfile);
             if (f.Exists)
             {
@@ -115,33 +220,33 @@ namespace Do_an
                         feeds_image dv = new feeds_image
                         {
                             username = st[0],
-                            image = Image.FromFile($"{address}users\\{lb_username.Text}\\post\\{st[5]}"),
+                            image = Image.FromFile($"{address}users\\{st[0]}\\post\\{st[5]}"),
                             text = st[4],
                             date = st[3],
                             reaction = st[6],
                             tag = st[5],
-                            User = btn_user.Image
+                            User = read_profile(st[0]),
+                            trangthai = cong_khai(st[2]),
                             
                         };
-
-                        if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
-                        else { flowLayoutPanel2.Controls.Add(dv); }
+                        if (flowLayoutPanel1.Controls.Count < 0) { flowLayoutPanel1.Controls.Clear(); }
+                        else { flowLayoutPanel1.Controls.Add(dv); }
                     }
                     else if (st[1] == "video")
                     {
                         feeds_video v = new feeds_video
                         {
                             username = st[0],
-                            url = $"{address}users\\{lb_username.Text}\\post\\{st[5]}",
+                            url = $"{address}users\\{st[0]}\\post\\{st[5]}",
                             text = st[4],
                             date = st[3],
                             reaction = st[6],
                             tag = st[5],
-                            User = btn_user.Image
+                            User = read_profile(st[0]),
+                            trangthai = cong_khai(st[2]),
                         };
-
-                        if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
-                        else { flowLayoutPanel2.Controls.Add(v); }
+                        if (flowLayoutPanel1.Controls.Count < 0) { flowLayoutPanel1.Controls.Clear(); }
+                        else { flowLayoutPanel1.Controls.Add(v); }
                     }
                     else
                     {
@@ -151,24 +256,25 @@ namespace Do_an
                             text = st[4],
                             date = st[3],
                             reaction = st[6],
-                            User = btn_user.Image,
-                            Tag = st[4]
+                            User = read_profile(st[0]),
+                            Tag = st[4],
+                            trangthai = cong_khai(st[2]),
                         };
-
-                        if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
-                        else { flowLayoutPanel2.Controls.Add(t); }
+                        if (flowLayoutPanel1.Controls.Count < 0) { flowLayoutPanel1.Controls.Clear(); }
+                        else { flowLayoutPanel1.Controls.Add(t); }
                     }
                 }
                 sr.Close();
             }
+
         }
         private void Readfile_prof()
         {
             string profile = $"{address}users\\{lb_username.Text}\\profile.txt";
             string background = $"{address}users\\{lb_username.Text}\\background.txt";
-            string image = "";string image2 = "";
+            string image = ""; string image2 = "";
             FileInfo f = new FileInfo(profile);
-            post p = new post();
+
             if (f.Exists)
             {
                 StreamReader sr = new StreamReader(profile);
@@ -188,51 +294,95 @@ namespace Do_an
                 Image2 = Image.FromFile(Path.Combine($"{address}users\\{lb_username.Text}\\post\\", image2)),
                 User = lb_username.Text,
             };
-            p.Image = Image.FromFile(Path.Combine($"{address}users\\{lb_username.Text}\\post\\", image));
+
             btn_user.Image = bg.Image;
             if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
             else { flowLayoutPanel2.Controls.Add(bg); }
-            
+            post p = new post();
+            p.Image = Image.FromFile(Path.Combine($"{address}users\\{lb_username.Text}\\post\\", image));
             flowLayoutPanel2.Controls.Add(p);
             bg.ButtonClicked += guna2CirclePictureBox_profile_Click;
             bg.ButtonClicked2 += pic_background_Click;
             p.ButtonClicked += button1_Click;
         }
-        public void Read_friend_request()
+    
+        List<string> users = new List<string>();
+        private void Read_friend_request()
         {
+            users = new List<string>();
             string tenfile = "user.txt";
             FileInfo f = new FileInfo(tenfile);
             if (f.Exists)
             {
                 StreamReader sr = new StreamReader(tenfile);
                 string str;
-                while ((str = sr.ReadLine()) != null)
+                StreamReader r = new StreamReader($"{address}users\\{lb_username.Text}\\friend\\friend.txt");
+                string str1;
+                str1 = r.ReadToEnd();
+                r.Close();
+
+                if (str1 == string.Empty)
                 {
-                    string p;
-                    string[] st = str.Split('\t');
-                    StreamReader r = new StreamReader($"{address}users\\{lb_username.Text}\\friend\\friend.txt");
-                    string str2;
-                    while((str2 = r.ReadLine())!=null)
+                    while ((str = sr.ReadLine()) != null)
                     {
-                        if (st[0] != lb_username.Text && st[0] != str2)
+                        string p;
+                        string[] st = str.Split('\t');
+
+                        StreamReader a = new StreamReader($"{address}users\\{st[0]}\\profile.txt");
+                        p = a.ReadLine();
+                        friend_find dv = new friend_find()
                         {
-                            StreamReader a = new StreamReader($"{address}users\\{st[0]}\\profile.txt");
-                            p = a.ReadLine();
-                            friend_find dv = new friend_find()
-                            {
-                                User = st[0],
-                                profile = Image.FromFile($"{address}users\\{st[0]}\\post\\{p}"),
-                            };
-                            a.Close();
-                            if (flowLayoutPanel3.Controls.Count < 0) { flowLayoutPanel3.Controls.Clear(); }
-                            else { flowLayoutPanel3.Controls.Add(dv); }
-                            dv.ButtonClicked += btn_clicked;
-                            dv.ButtonClicked3 += btn_clicked3;
-                        }
-                    }    
-                    
+                            User = st[0],
+                            profile = Image.FromFile($"{address}users\\{st[0]}\\post\\{p}"),
+                        };
+                        a.Close();
+                        if (flowLayoutPanel3.Controls.Count < 0) { flowLayoutPanel3.Controls.Clear(); }
+                        else { flowLayoutPanel3.Controls.Add(dv); }
+                        dv.ButtonClicked += btn_clicked;
+                        dv.ButtonClicked3 += btn_clicked3;
+                        dv.ButtonClicked_delete += btnDelete_clicked;
+                        dv.ButtonClicked_delete2 += btnDelete2_clicked;
+                        //r.Close();
+                    }
+                    sr.Close();
                 }
-                sr.Close();
+                else
+                {
+                    while ((str = sr.ReadLine()) != null)
+                    {
+                        
+                        string[] st = str.Split('\t');
+                        //r = new StreamReader($"{address}users\\{lb_username.Text}\\friend\\friend.txt");
+                        users.Add(st[0]);           
+                        //r.Close();
+                    }
+                    sr.Close();
+                    friend_count();
+                    friends.Add(lb_username.Text);
+                    //friends.Add("Nguyễn Minh Thi");
+                    List<string> list = users.Except(friends).ToList();
+                    foreach(string user in list)
+                    {
+                        string p;
+                        StreamReader a = new StreamReader($"{address}users\\{user}\\profile.txt");
+                        p = a.ReadLine();
+                        friend_find dv = new friend_find()
+                        {
+                            User = user,
+                            profile = Image.FromFile($"{address}users\\{user}\\post\\{p}"),
+                        };
+                        a.Close();
+                        if (flowLayoutPanel3.Controls.Count < 0) { flowLayoutPanel3.Controls.Clear(); }
+                        else { flowLayoutPanel3.Controls.Add(dv); }
+                        dv.ButtonClicked += btn_clicked;
+                        dv.ButtonClicked3 += btn_clicked3;
+                        dv.ButtonClicked_delete += btnDelete_clicked;
+                        dv.ButtonClicked_delete2 += btnDelete2_clicked;
+                    }    
+                   
+                }
+                
+                
             }
         }
         private void btn_clicked(object sender, EventArgs e)
@@ -245,7 +395,16 @@ namespace Do_an
             friend_find friend_find = sender as friend_find;
             friend_find.item2();
         }
-
+        private void btnDelete_clicked(object sender, EventArgs e)
+        {
+            friend_find friend_find = sender as friend_find;
+            friend_find.delete_sent();
+        }
+        private void btnDelete2_clicked(object sender, EventArgs e)
+        {
+            friend_find friend_find = sender as friend_find;
+            friend_find.delete_request();
+        }
         private void Readfile_Profpost()
         {
             string tenfile = $"{address}users\\{lb_username.Text}\\post\\post.txt";
@@ -267,8 +426,10 @@ namespace Do_an
                             date = st[3],
                             reaction = st[6],
                             tag = st[5],
-                            User = btn_user.Image
+                            User = btn_user.Image,
+                            trangthai = cong_khai(st[2])
                         };
+                        dv.Button_delete += btnImage_delete;
 
                         if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
                         else { flowLayoutPanel2.Controls.Add(dv); }
@@ -283,9 +444,10 @@ namespace Do_an
                             date = st[3],
                             reaction = st[6],
                             tag = st[5],
-                            User = btn_user.Image
+                            User = btn_user.Image,
+                            trangthai = cong_khai(st[2])
                         };
-
+                        v.Button_delete += btnVideo_delete;
                         if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
                         else { flowLayoutPanel2.Controls.Add(v); }
                     }
@@ -298,9 +460,10 @@ namespace Do_an
                             date = st[3],
                             reaction = st[6],
                             User = btn_user.Image,
-                            Tag = st[4]
+                            Tag = st[4],
+                            trangthai = cong_khai(st[2])
                         };
-
+                        t.button_delete += btnText_delete;
                         if (flowLayoutPanel2.Controls.Count < 0) { flowLayoutPanel2.Controls.Clear(); }
                         else { flowLayoutPanel2.Controls.Add(t); }
                     }
@@ -308,7 +471,24 @@ namespace Do_an
                 sr.Close();
             }
         }
-
+        private void btnImage_delete(object sender, EventArgs e)
+        {
+            feeds_image click = sender as feeds_image;
+            click.delete();flowLayoutPanel2.Controls.Clear();
+            Readfile_Profpost();
+        }
+        private void btnText_delete(object sender, EventArgs e)
+        {
+            feeds_text click = sender as feeds_text;
+            click.delete(); flowLayoutPanel2.Controls.Clear();
+            Readfile_Profpost();
+        }
+        private void btnVideo_delete(object sender, EventArgs e)
+        {
+            feeds_video click = sender as feeds_video;
+            click.delete(); flowLayoutPanel2.Controls.Clear();
+            Readfile_Profpost();
+        }
         private void Readfile_notif()
         {
             string tenfile = $"{address}users\\{lb_username.Text}\\notification\\notification.txt";
@@ -327,7 +507,8 @@ namespace Do_an
                     notification nt = new notification
                     {
                         Description = $"{st[0]} {st[1]}",
-                        profile = Image.FromFile($"{address}users\\{st[0]}\\post\\{image}")
+                        profile = Image.FromFile($"{address}users\\{st[0]}\\post\\{image}"),
+                        date = st[2]
                     };
                     if (flowLayoutPanel4.Controls.Count < 0) { flowLayoutPanel4.Controls.Clear(); }
                     else { flowLayoutPanel4.Controls.Add(nt); }
@@ -350,7 +531,7 @@ namespace Do_an
             string[] str = word_found.ToString().Trim().ToLower().Split('\t');
             return str[0];
         }
-        private void replace(string txtfile, string item)
+        public static void delete(string txtfile, string item)
         {
             //Delete a chosen item in txt file and update
             var tempFile = Path.GetTempFileName();
@@ -454,6 +635,28 @@ namespace Do_an
                         + Path.GetFileName(pictureBox3.Tag.ToString()) + '\t'
                         + "Thích ");
             sw.Close();
+            if (picProfile2.Tag.ToString() == "0" && pic_background.Tag.ToString() == "0")
+            {
+                if (cb_quyen.Text == "Công khai" || cb_quyen.Text == "Bạn bè")
+                {
+                    sw = new StreamWriter($"{address}users\\{label1.Text}\\notification\\notification.txt", true);
+                    sw.WriteLine(lb_username.Text + "\t" + "đã đăng ảnh vào" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");                    
+                }
+            }
+            else
+            {
+                if (picProfile2.Tag.ToString() == "1" && (cb_quyen.Text == "Công khai" || cb_quyen.Text == "Bạn bè"))
+                {
+                    sw = new StreamWriter($"{address}users\\{label1.Text}\\notification\\notification.txt", true);
+                    sw.WriteLine(lb_username.Text + "\t" + "đã cập nhật ảnh đại diện vào" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
+                }
+                if (pic_background.Tag.ToString() == "1" && (cb_quyen.Text == "Công khai" || cb_quyen.Text == "Bạn bè"))
+                {
+                    sw = new StreamWriter($"{address}users\\{label1.Text}\\notification\\notification.txt", true);
+                    sw.WriteLine(lb_username.Text + "\t" + "đã cập nhật ảnh bìa vào" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
+                }
+            }    
+            sw.Close();
         }
 
         private void post_video()
@@ -474,6 +677,10 @@ namespace Do_an
                             + Path.GetFileName(video.Tag.ToString()) + '\t'
                             + "Thích ");
                 sw.Close();
+
+                StreamWriter w = new StreamWriter($"{address}users\\{label1.Text}\\notification\\notification.txt", true);
+                w.WriteLine(lb_username.Text + "\t" + "đã đăng video vào" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
+                w.Close();
             }
          
         }
@@ -494,12 +701,15 @@ namespace Do_an
                             + "" + '\t'
                             + "Thích ");
                 sw.Close();
+                StreamWriter w = new StreamWriter($"{address}users\\{label1.Text}\\notification\\notification.txt", true);
+                w.WriteLine(lb_username.Text + "\t" + "đã đăng dòng caption vào" + "\t" + $"{date.Day} thg {date.Month}, {date.Year}");
+                w.Close();
             }
                 
         }
         private void btn_post_Click(object sender, EventArgs e)
         {
-            //i = 0;
+            video.URL = null;   pictureBox3.Image = null;   btn_post.Tag = "Text";  video.Visible = false;  pictureBox3.Visible = false;
             if (btn_post.Tag.ToString() == "image")
             {
                 feeds_image dv = new feeds_image
@@ -557,13 +767,14 @@ namespace Do_an
             panel_home.Visible = true;
             panel_post.Visible = false;
             panel_profile.Visible = false;
+            panel_friend.Visible = false;
+            flowLayoutPanel6.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panel_post.BringToFront();
             panel_post.Visible = true;
-            panel_home.Visible = false;
-            panel_profile.Visible = false;
         }
 
         private void btn_user_Click(object sender, EventArgs e)
@@ -571,6 +782,8 @@ namespace Do_an
             panel_profile.Visible = true;
             panel_post.Visible = false;
             panel_home.Visible = false;
+            panel_friend.Visible = false;
+            flowLayoutPanel6.Visible = false;
         }
 
         private void btn_update_Click(object sender, EventArgs e)
@@ -587,9 +800,11 @@ namespace Do_an
 
         private void btn_friend_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel3.Controls.Clear();
-            Read_friend_request();
+            panel_home.Visible=false;
+            panel_post.Visible=false;
+            panel_profile.Visible=false;
             panel_friend.Visible = true;
+            flowLayoutPanel6.Visible = true;
         }
 
         private void link_xóa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -602,7 +817,7 @@ namespace Do_an
         {
             if (isEnable == true)
             {
-                flowLayoutPanel4.Visible = true; isEnable = false;
+                flowLayoutPanel4.Visible = true; flowLayoutPanel4.BringToFront(); isEnable = false;
             }
             else
             { flowLayoutPanel4.Visible = false;isEnable = true; }
@@ -610,9 +825,70 @@ namespace Do_an
             
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        bool enabled = true;
+        private void pic_option_Click(object sender, EventArgs e)
         {
+            if(enabled == true){panel5.Visible = true;enabled = false;}    
+            else { panel5.Visible = false; enabled = true; }
+        }
 
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            guna2GradientButton1.FillColor = Color.Silver;
+            guna2GradientButton2.FillColor = Color.WhiteSmoke;
+            flowLayoutPanel3.Visible = false;
+            flowLayoutPanel5.Visible = true;
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            guna2GradientButton2.FillColor = Color.Silver;
+            guna2GradientButton1.FillColor = Color.WhiteSmoke;
+            flowLayoutPanel3.Visible = true;
+            flowLayoutPanel5.Visible = false;
+        }
+        private void Item_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel6.Controls.Clear();
+            friend clickedUserControl = sender as friend;
+            if (clickedUserControl != null)
+            {
+                string profile = $"{address}users\\{clickedUserControl.User}\\profile.txt";
+                string background = $"{address}users\\{clickedUserControl.User}\\background.txt";
+                string image = ""; string image2 = "";
+                FileInfo f = new FileInfo(profile);
+
+                if (f.Exists)
+                {
+                    StreamReader sr = new StreamReader(profile);
+                    image = sr.ReadLine();
+                    sr.Close();
+                }
+                f = new FileInfo(background);
+                if (f.Exists)
+                {
+                    StreamReader sr = new StreamReader(background);
+                    image2 = sr.ReadLine();
+                    sr.Close();
+                }
+                background bg = new background
+                {
+                    Image = Image.FromFile(Path.Combine($"{address}users\\{clickedUserControl.User}\\post\\", image)),
+                    Image2 = Image.FromFile(Path.Combine($"{address}users\\{clickedUserControl.User}\\post\\", image2)),
+                    User = clickedUserControl.User,
+                };
+                if (flowLayoutPanel6.Controls.Count < 0) { flowLayoutPanel6.Controls.Clear(); }
+                else { flowLayoutPanel6.Controls.Add(bg); }
+            }
+        }
+        private void flowLayoutPanel5_ControlAdded(object sender, ControlEventArgs e)
+        {
+            e.Control.Click += new EventHandler(Item_Click);
+        }
+
+        private void flowLayoutPanel3_ControlAdded(object sender, ControlEventArgs e)
+        {
+            //e.Control.Click += new EventHandler(Item_Click);
         }
     }
 }

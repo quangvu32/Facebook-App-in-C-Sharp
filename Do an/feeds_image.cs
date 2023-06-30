@@ -20,7 +20,7 @@ namespace Do_an
         {
             InitializeComponent();
             richTextBox1.ReadOnly = true;
-            
+            panel_option.Visible = false;
         }
         private string _reaction;
         private Image _image;
@@ -29,6 +29,12 @@ namespace Do_an
         private string _date;
         private string _tag;
         private Image _user;
+        private Image _trangthai;
+        public Image trangthai
+        {
+            get { return _trangthai; }
+            set { _trangthai = value; pictureBox3.Image = value; }
+        }
         public Image User
         {
             get { return _user; }
@@ -207,5 +213,64 @@ namespace Do_an
             visibilityTimer.Tick += timer2_Tick;
             visibilityTimer.Start();
         }
+        public event EventHandler RemoveBtn;
+        bool enabled = true;
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if(enabled == true)
+            {
+                panel_option.Visible = true;
+                enabled = false;
+            }    
+            else
+            {
+                panel_option.Visible = false;
+                enabled = true;
+            }    
+            //RemoveBtn?.Invoke(this, EventArgs.Empty);
+        }
+        public event EventHandler Button_delete;
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Button_delete?.Invoke(this, EventArgs.Empty);
+        }
+        public void delete()
+        {
+            string tenfile = $"{Form1.address}users\\{lb_username.Text}\\post\\post.txt";
+            FileInfo f = new FileInfo(tenfile);
+            if (f.Exists)
+            {
+                StreamReader sr = new StreamReader(tenfile);
+                string str;
+                while ((str = sr.ReadLine()) != null)
+                {
+                    string[] st = str.Split('\t');
+                    if(lb_username.Text == st[0] && lb_date.Text == st[3] && pictureBox1.Tag.ToString() == st[5])
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Bạn muốn xóa bài viết?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            sr.Close();
+                            Form1.delete($"{tenfile}", str);
+                            MessageBox.Show("Xóa bài thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            sr.Close();  
+                        }
+                        break;
+                    }    
+                }  
+            }
+        }
+
+        public event EventHandler Button_fix;
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Button_fix?.Invoke(this, EventArgs.Empty);
+        }
+        
+
     }
 }

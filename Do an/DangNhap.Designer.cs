@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pic_eyeOpen = new System.Windows.Forms.PictureBox();
             this.pic_eyeClose = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_taoTK = new System.Windows.Forms.Button();
@@ -64,7 +63,6 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_eyeOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_eyeClose)).BeginInit();
             this.panel_DK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,7 +76,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pic_eyeOpen);
             this.panel1.Controls.Add(this.pic_eyeClose);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btn_taoTK);
@@ -86,21 +83,10 @@
             this.panel1.Controls.Add(this.btn_DN);
             this.panel1.Controls.Add(this.txt_mk_DN);
             this.panel1.Controls.Add(this.txt_email_DN);
-            this.panel1.Location = new System.Drawing.Point(476, 60);
+            this.panel1.Location = new System.Drawing.Point(393, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(399, 335);
             this.panel1.TabIndex = 1;
-            // 
-            // pic_eyeOpen
-            // 
-            this.pic_eyeOpen.Image = global::Do_an.Properties.Resources._8541829_eye_vision_view_icon;
-            this.pic_eyeOpen.Location = new System.Drawing.Point(340, 79);
-            this.pic_eyeOpen.Name = "pic_eyeOpen";
-            this.pic_eyeOpen.Size = new System.Drawing.Size(29, 27);
-            this.pic_eyeOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_eyeOpen.TabIndex = 5;
-            this.pic_eyeOpen.TabStop = false;
-            this.pic_eyeOpen.Click += new System.EventHandler(this.pic_eyeOpen_Click);
             // 
             // pic_eyeClose
             // 
@@ -209,9 +195,9 @@
             this.panel_DK.Controls.Add(this.txt_ten_DK);
             this.panel_DK.Controls.Add(this.txt_ho_DK);
             this.panel_DK.Controls.Add(this.label1);
-            this.panel_DK.Location = new System.Drawing.Point(285, 60);
+            this.panel_DK.Location = new System.Drawing.Point(272, 65);
             this.panel_DK.Name = "panel_DK";
-            this.panel_DK.Size = new System.Drawing.Size(359, 430);
+            this.panel_DK.Size = new System.Drawing.Size(359, 418);
             this.panel_DK.TabIndex = 2;
             // 
             // pictureBox2
@@ -229,7 +215,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 321);
+            this.label4.Location = new System.Drawing.Point(21, 315);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(334, 52);
             this.label4.TabIndex = 16;
@@ -239,7 +225,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 285);
+            this.label3.Location = new System.Drawing.Point(21, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(292, 26);
             this.label3.TabIndex = 15;
@@ -250,7 +236,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.check2);
-            this.panel5.Location = new System.Drawing.Point(142, 247);
+            this.panel5.Location = new System.Drawing.Point(142, 237);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(103, 35);
             this.panel5.TabIndex = 14;
@@ -273,7 +259,7 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.check1);
-            this.panel4.Location = new System.Drawing.Point(24, 247);
+            this.panel4.Location = new System.Drawing.Point(24, 237);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(87, 35);
             this.panel4.TabIndex = 13;
@@ -294,7 +280,7 @@
             // 
             // btn_DK
             // 
-            this.btn_DK.Location = new System.Drawing.Point(112, 386);
+            this.btn_DK.Location = new System.Drawing.Point(112, 370);
             this.btn_DK.Name = "btn_DK";
             this.btn_DK.Size = new System.Drawing.Size(134, 41);
             this.btn_DK.TabIndex = 12;
@@ -578,7 +564,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 150);
+            this.label5.Location = new System.Drawing.Point(12, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(375, 90);
             this.label5.TabIndex = 4;
@@ -588,7 +574,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Do_an.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(267, 231);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -598,7 +584,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Do_an.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(877, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(761, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(29, 32);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -619,7 +605,7 @@
             this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Location = new System.Drawing.Point(-1, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(920, 59);
+            this.panel6.Size = new System.Drawing.Size(817, 59);
             this.panel6.TabIndex = 6;
             // 
             // DangNhap
@@ -627,7 +613,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(918, 510);
+            this.ClientSize = new System.Drawing.Size(794, 488);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel_DK);
             this.Controls.Add(this.label5);
@@ -641,7 +627,6 @@
             this.Load += new System.EventHandler(this.DangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_eyeOpen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_eyeClose)).EndInit();
             this.panel_DK.ResumeLayout(false);
             this.panel_DK.PerformLayout();
@@ -688,7 +673,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pic_eyeOpen;
         private System.Windows.Forms.PictureBox pic_eyeClose;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;

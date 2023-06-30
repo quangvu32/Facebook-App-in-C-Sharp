@@ -106,6 +106,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="friend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="friend.Designer.cs">
+      <DependentUpon>friend.cs</DependentUpon>
+    </Compile>
     <Compile Include="friend_find.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="friend.resx">
+      <DependentUpon>friend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="friend_find.resx">
       <DependentUpon>friend_find.cs</DependentUpon>
@@ -324,6 +333,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bell2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643766_album_image_landscape_photo_photos_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2205199_dot_hide_menu_more_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3844442_dot_menu_more_vertical_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3994420_draw_edit_new_pen_write_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3844442_dot_menu_more_vertical_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3844442_dot_menu_more_vertical_icon2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

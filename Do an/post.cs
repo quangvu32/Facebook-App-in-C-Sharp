@@ -14,6 +14,7 @@ namespace Do_an
     public partial class post : UserControl
     {
         public event EventHandler ButtonClicked;
+        public event EventHandler picture;
         private Image _image;
         public Image Image
         {
@@ -26,6 +27,11 @@ namespace Do_an
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            ButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             ButtonClicked?.Invoke(this, EventArgs.Empty);
         }

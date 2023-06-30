@@ -130,6 +130,9 @@
   <data name="angry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\angry.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bell2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bell2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="love" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\love.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,11 +145,14 @@
   <data name="friend" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\friend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="White Pause Button Symbol Png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\White Pause Button Symbol Png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3994420_draw_edit_new_pen_write_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3994420_draw_edit_new_pen_write_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3643766_album_image_landscape_photo_photos_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643766_album_image_landscape_photo_photos_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="White Pause Button Symbol Png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\White Pause Button Symbol Png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +193,12 @@
   <data name="3844470_home_house_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844470_home_house_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3844442_dot_menu_more_vertical_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844442_dot_menu_more_vertical_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3844442_dot_menu_more_vertical_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844442_dot_menu_more_vertical_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="eye_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,6 +207,9 @@
   </data>
   <data name="Screenshot 2023-06-14 114151 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2023-06-14 114151 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wow.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,14 +220,23 @@
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="close3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wow1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="messenger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\messenger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="2205199_dot_hide_menu_more_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2205199_dot_hide_menu_more_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="8541830_eye_slash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8541830_eye_slash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3643766_album_image_landscape_photo_photos_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3643766_album_image_landscape_photo_photos_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3844470_home_house_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844470_home_house_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,7 +247,7 @@
   <data name="eye_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bell2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bell2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3844442_dot_menu_more_vertical_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844442_dot_menu_more_vertical_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

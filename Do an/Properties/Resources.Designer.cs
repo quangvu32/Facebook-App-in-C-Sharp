@@ -73,6 +73,16 @@ namespace Do_an.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2205199_dot_hide_menu_more_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("2205199_dot_hide_menu_more_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _352020_arrow_back_icon {
             get {
                 object obj = ResourceManager.GetObject("352020_arrow_back_icon", resourceCulture);
@@ -93,6 +103,46 @@ namespace Do_an.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3643766_album_image_landscape_photo_photos_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("3643766_album_image_landscape_photo_photos_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3844442_dot_menu_more_vertical_icon {
+            get {
+                object obj = ResourceManager.GetObject("3844442_dot_menu_more_vertical_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3844442_dot_menu_more_vertical_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("3844442_dot_menu_more_vertical_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3844442_dot_menu_more_vertical_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("3844442_dot_menu_more_vertical_icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3844470_home_house_icon {
             get {
                 object obj = ResourceManager.GetObject("3844470_home_house_icon", resourceCulture);
@@ -106,6 +156,16 @@ namespace Do_an.Properties {
         internal static System.Drawing.Bitmap _3844470_home_house_icon1 {
             get {
                 object obj = ResourceManager.GetObject("3844470_home_house_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3994420_draw_edit_new_pen_write_icon {
+            get {
+                object obj = ResourceManager.GetObject("3994420_draw_edit_new_pen_write_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +276,26 @@ namespace Do_an.Properties {
         internal static System.Drawing.Bitmap close1 {
             get {
                 object obj = ResourceManager.GetObject("close1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close2 {
+            get {
+                object obj = ResourceManager.GetObject("close2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close3 {
+            get {
+                object obj = ResourceManager.GetObject("close3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

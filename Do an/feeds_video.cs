@@ -23,7 +23,12 @@ namespace Do_an
         private string _tag;
         private string _url;
         private Image _user;
-
+        private Image _trangthai;
+        public Image trangthai
+        {
+            get { return _trangthai; }
+            set { _trangthai = value; pictureBox3.Image = value; }
+        }
         public Image User
         {
             get { return _user; }
@@ -48,7 +53,7 @@ namespace Do_an
         public string date
         {
             get { return _date; }
-            set { _date = value; label2.Text = value; }
+            set { _date = value; lb_date.Text = value; }
         }
         public string tag
         {
@@ -63,11 +68,12 @@ namespace Do_an
         public feeds_video()
         {
             InitializeComponent();
-            richTextBox1.Enabled = false;
+            richTextBox1.ReadOnly = true;
             video.OpenStateChange += AxWindowsMediaPlayer1_OpenStateChange;
             video.PlayStateChange += AxWindowsMediaPlayer1_PlayStateChange;
             slider.Height = 20;
             guna2TrackBar1.Value = 50;
+            panel_option.Visible = false;
         }
 
         #region slider control
@@ -135,6 +141,7 @@ namespace Do_an
 
         }
         #endregion
+
         private void AxWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             if ((WMPLib.WMPPlayState)e.newState == WMPLib.WMPPlayState.wmppsMediaEnded)
@@ -323,6 +330,63 @@ namespace Do_an
             visibilityTimer?.Stop();
             visibilityTimer = null;
             panel_react.Visible = true;
+        }
+        public event EventHandler RemoveBtn;
+        bool enabled;
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (enabled == true)
+            {
+                panel_option.Visible = true;
+                enabled = false;
+            }
+            else
+            {
+                panel_option.Visible = false;
+                enabled = true;
+            }
+            //RemoveBtn?.Invoke(this, EventArgs.Empty);
+        }
+
+        public event EventHandler Button_delete;
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Button_delete?.Invoke(this, EventArgs.Empty);
+        }
+        public void delete()
+        {
+            string tenfile = $"{Form1.address}users\\{lb_username.Text}\\post\\post.txt";
+            FileInfo f = new FileInfo(tenfile);
+            if (f.Exists)
+            {
+                StreamReader sr = new StreamReader(tenfile);
+                string str;
+                while ((str = sr.ReadLine()) != null)
+                {
+                    string[] st = str.Split('\t');
+                    if (lb_username.Text == st[0] && lb_date.Text == st[3] && video.Tag.ToString() == st[5])
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Bạn muốn xóa bài viết?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            sr.Close();
+                            Form1.delete($"{tenfile}", str);
+                            MessageBox.Show("Xóa bài thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            sr.Close();
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        public event EventHandler Button_fix;
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Button_fix.Invoke(this, EventArgs.Empty);
         }
 
         private void pic_pause_Click(object sender, EventArgs e)

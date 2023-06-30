@@ -39,7 +39,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 59);
+            this.label1.Location = new System.Drawing.Point(87, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 25);
             this.label1.TabIndex = 12;
@@ -52,7 +52,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(87, 0);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(315, 56);
+            this.richTextBox1.Size = new System.Drawing.Size(337, 61);
             this.richTextBox1.TabIndex = 14;
             this.richTextBox1.Text = "";
             // 
@@ -70,7 +70,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(3, 87);
+            this.panel1.Location = new System.Drawing.Point(0, 92);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 1);
             this.panel1.TabIndex = 15;
@@ -85,7 +85,7 @@
             this.Controls.Add(this.pic_user);
             this.Controls.Add(this.label1);
             this.Name = "notification";
-            this.Size = new System.Drawing.Size(427, 88);
+            this.Size = new System.Drawing.Size(427, 96);
             this.Load += new System.EventHandler(this.notification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
             this.ResumeLayout(false);

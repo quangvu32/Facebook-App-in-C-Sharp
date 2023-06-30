@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Do_an
@@ -16,7 +10,8 @@ namespace Do_an
         public feeds_text()
         {
             InitializeComponent();
-            richTextBox1.Enabled = false;
+            richTextBox1.ReadOnly = true;
+            panel_option.Visible = false;
         }
         string path = Form1.path;
 
@@ -25,6 +20,12 @@ namespace Do_an
         private string _text;
         private string _date;
         private Image _user;
+        private Image _trangthai;
+        public Image trangthai
+        {
+            get { return _trangthai; }
+            set { _trangthai = value; pictureBox3.Image = value; }
+        }
         public Image User
         {
             get { return _user; }
@@ -192,6 +193,84 @@ namespace Do_an
             visibilityTimer.Interval = VisibilityDelay;
             visibilityTimer.Tick += timer2_Tick;
             visibilityTimer.Start();
+        }
+
+        public event EventHandler RemoveBtn;
+        bool enabled = true;
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (enabled == true)
+            {
+                panel_option.Visible = true;
+                enabled = false;
+            }
+            else
+            {
+                panel_option.Visible = false;
+                enabled = true;
+            }
+            //RemoveBtn?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void label5_MouseEnter(object sender, EventArgs e)
+        {
+            label5.Font = new Font("Segoe UI", 16, FontStyle.Underline);
+        }
+
+        private void label5_MouseLeave(object sender, EventArgs e)
+        {
+            label5.Font = new Font("Segoe UI", 16, FontStyle.Regular);
+        }
+
+        private void label4_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Font = new Font("Segoe UI", 16, FontStyle.Underline);
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Font = new Font("Segoe UI", 16, FontStyle.Regular);
+        }
+
+        public event EventHandler button_delete;
+        private void label5_Click(object sender, EventArgs e)
+        {
+            button_delete?.Invoke(this, EventArgs.Empty);
+        }
+        public void delete()
+        {
+            string tenfile = $"{Form1.address}users\\{lb_username.Text}\\post\\post.txt";
+            FileInfo f = new FileInfo(tenfile);
+            if (f.Exists)
+            {
+                StreamReader sr = new StreamReader(tenfile);
+                string str;
+                while ((str = sr.ReadLine()) != null)
+                {
+                    string[] st = str.Split('\t');
+                    if (lb_username.Text == st[0] && lb_date.Text == st[3] && richTextBox1.Text == st[4])
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Bạn muốn xóa bài viết?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            sr.Close();
+                            Form1.delete($"{tenfile}", str);
+                            MessageBox.Show("Xóa bài thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            sr.Close();
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        public event EventHandler Button_fix;
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Button_fix?.Invoke(this, EventArgs.Empty);
         }
     }
 }

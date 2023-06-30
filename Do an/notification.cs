@@ -15,7 +15,7 @@ namespace Do_an
     {
         private Image _profile;
         private string _description;
- 
+        private string _date;
         public Image profile
         {
             get { return _profile; }
@@ -25,6 +25,12 @@ namespace Do_an
         {
             get { return _description; }
             set { _description = value; richTextBox1.Text = value; }
+        }
+
+        public string date
+        {
+            get { return _date; }
+            set { _date = value; label1.Text = value; }
         }
         public notification()
         {

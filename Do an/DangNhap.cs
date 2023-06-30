@@ -16,7 +16,6 @@ namespace Do_an
 {
     public partial class DangNhap : Form
     {
-        DataTable dt = new DataTable();
         DateTime date = DateTime.Now;
         string username = "";
         static string fileLocation()
@@ -185,7 +184,7 @@ namespace Do_an
                 }
                 if (check1.Checked) { sx = check1.Text; } if(check2.Checked) { sx = check2.Text; }
                 
-                string s = ten + '\t' + txt_email_DK.Text + '\t' + txt_mk_DK.Text + '\t' + birth + '\t' + sx +'\t' + "profile.jpg" + '\t' + "gray.png" ;
+                string s = ten + '\t' + txt_email_DK.Text ;
                 writefile(s, "user.txt");
 
                 MessageBox.Show("Tạo tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -216,13 +215,15 @@ namespace Do_an
                 w = new StreamWriter($"{address}users\\{ten}\\post\\post.txt");
                 w.Close();
                 Directory.CreateDirectory($"{address}users\\{ten}\\chat");
-                w = new StreamWriter($"{address}users\\{ten}\\post\\chat.txt");
+                w = new StreamWriter($"{address}users\\{ten}\\chat\\chat.txt");
                 w.Close();
                 Directory.CreateDirectory($"{address}users\\{ten}\\friend");
-                w = new StreamWriter($"{address}users\\{ten}\\post\\friend.txt");
+                w = new StreamWriter($"{address}users\\{ten}\\friend\\friend.txt");
+                w.Close();
+                w = new StreamWriter($"{address}users\\{ten}\\friend\\sent_request.txt");
                 w.Close();
                 Directory.CreateDirectory($"{address}users\\{ten}\\notification");
-                w = new StreamWriter($"{address}users\\{ten}\\post\\notification.txt");
+                w = new StreamWriter($"{address}users\\{ten}\\notification\\notification.txt");
                 w.Close();
 
                 copyFile("profile.jpg", $"{address}users\\{ten}\\post\\");
@@ -325,22 +326,24 @@ namespace Do_an
             check2.Checked = true;
         }
 
-        private void eye(PictureBox pic1, PictureBox pic2, TextBox txt, char a)
-        {
-            pic1.Visible = false;
-            pic2.Visible = true;
-            if (txt.Text != "Mật khẩu")
-            { txt.PasswordChar = a; }
-
-        }
+        bool enabled = true;
         private void pic_eyeClose_Click(object sender, EventArgs e)
         {
-            eye(pic_eyeClose, pic_eyeOpen, txt_mk_DN, '\0');
-        }
-
-        private void pic_eyeOpen_Click(object sender, EventArgs e)
-        {
-            eye(pic_eyeOpen, pic_eyeClose, txt_mk_DN, '*');
+            if(txt_mk_DN.Text != "Mật khẩu")
+            {
+                if (enabled == true)
+                {
+                    pic_eyeClose.Image = Image.FromFile($"{Form1.path}\\icon\\8541830_eye_slash_icon.png");
+                    txt_mk_DN.PasswordChar = '*';
+                    enabled = false;
+                }
+                else
+                {
+                    pic_eyeClose.Image = Image.FromFile($"{Form1.path}\\icon\\8541829_eye_vision_view_icon.png");
+                    txt_mk_DN.PasswordChar = '\0';
+                    enabled = true;
+                }
+            }       
         }
 
         private void lb_forgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

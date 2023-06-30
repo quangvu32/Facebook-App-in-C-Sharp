@@ -18,7 +18,7 @@ namespace Do_an
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new Form1("John Cena"));
         }
     }
 }
