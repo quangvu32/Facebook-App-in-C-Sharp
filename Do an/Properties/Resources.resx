@@ -124,6 +124,12 @@
   <data name="haha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\haha.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3844442_dot_menu_more_vertical_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844442_dot_menu_more_vertical_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="326711_movie_theaters_video_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\326711_movie_theaters_video_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="care" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\care.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,20 +142,29 @@
   <data name="love" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\love.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3643766_album_image_landscape_photo_photos_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3643766_album_image_landscape_photo_photos_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="5296499_fb_facebook_facebook logo_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5296499_fb_facebook_facebook logo_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="8541829_eye_vision_view_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8541829_eye_vision_view_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="friend" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\friend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Play Button Png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Play Button Png1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3994420_draw_edit_new_pen_write_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3994420_draw_edit_new_pen_write_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="close6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3643766_album_image_landscape_photo_photos_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643766_album_image_landscape_photo_photos_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3643766_album_image_landscape_photo_photos_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3643766_album_image_landscape_photo_photos_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="White Pause Button Symbol Png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\White Pause Button Symbol Png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +184,8 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngaaa.com-1451153" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngaaa.com-1451153.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="352020_arrow_back_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\352020_arrow_back_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sad.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,20 +193,20 @@
   <data name="5296499_fb_facebook_facebook logo_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5296499_fb_facebook_facebook logo_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Play Button Png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Play Button Png1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="352020_arrow_back_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\352020_arrow_back_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bell1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bell1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="3844470_home_house_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844470_home_house_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3643766_album_image_landscape_photo_photos_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3643766_album_image_landscape_photo_photos_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3994382_access_close_exit_logout_sign out_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3994382_access_close_exit_logout_sign out_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3844442_dot_menu_more_vertical_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844442_dot_menu_more_vertical_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +214,17 @@
   <data name="3844442_dot_menu_more_vertical_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844442_dot_menu_more_vertical_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye_open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wow1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4202086_like_facebook_fb_logo_social_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4202086_like_facebook_fb_logo_social_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="messenger1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\messenger1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +238,17 @@
   <data name="wow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wow.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="211751_gear_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\211751_gear_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3643766_album_image_landscape_photo_photos_icon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3643766_album_image_landscape_photo_photos_icon4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,11 +256,14 @@
   <data name="close3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wow1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngaaa.com-1451153" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngaaa.com-1451153.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="messenger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\messenger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="friend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\friend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2205199_dot_hide_menu_more_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2205199_dot_hide_menu_more_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,8 +271,14 @@
   <data name="8541830_eye_slash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8541830_eye_slash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3643766_album_image_landscape_photo_photos_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3643766_album_image_landscape_photo_photos_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye_open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3844442_dot_menu_more_vertical_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844442_dot_menu_more_vertical_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3844470_home_house_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3844470_home_house_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,7 +289,13 @@
   <data name="eye_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3844442_dot_menu_more_vertical_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3844442_dot_menu_more_vertical_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="326692_send_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\326692_send_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bell1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bell1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="326631_video_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\326631_video_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

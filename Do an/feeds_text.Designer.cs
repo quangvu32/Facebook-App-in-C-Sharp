@@ -52,6 +52,7 @@
             this.pic_care = new System.Windows.Forms.PictureBox();
             this.pic_love = new System.Windows.Forms.PictureBox();
             this.pic_like = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_react.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel_option.SuspendLayout();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_care)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_love)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_like)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -164,6 +166,7 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.label3);
             this.guna2CustomGradientPanel1.Controls.Add(this.panel_react);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_reaction);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(435, 310);
@@ -354,6 +357,17 @@
             this.pic_like.TabStop = false;
             this.pic_like.Click += new System.EventHandler(this.pic_like_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Do_an.Properties.Resources.close5;
+            this.pictureBox1.Location = new System.Drawing.Point(402, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // feeds_text
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_care)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_love)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_like)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,5 +426,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

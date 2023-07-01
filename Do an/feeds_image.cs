@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -21,6 +23,7 @@ namespace Do_an
             InitializeComponent();
             richTextBox1.ReadOnly = true;
             panel_option.Visible = false;
+            pictureBox7.Visible = false;
         }
         private string _reaction;
         private Image _image;
@@ -30,6 +33,14 @@ namespace Do_an
         private string _tag;
         private Image _user;
         private Image _trangthai;
+        private string _trangthai2;
+
+        public string trangthai2
+        {
+            get { return _trangthai2; }
+            set { _trangthai2 = value; }
+        }
+
         public Image trangthai
         {
             get { return _trangthai; }
@@ -270,7 +281,15 @@ namespace Do_an
         {
             Button_fix?.Invoke(this, EventArgs.Empty);
         }
-        
-
+        public event EventHandler button_hide;
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            button_hide?.Invoke(this, EventArgs.Empty);
+        }
+        public void hide()
+        {
+            pictureBox7.Visible = true;
+            pictureBox4.Visible = false;
+        }
     }
 }

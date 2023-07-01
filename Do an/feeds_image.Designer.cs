@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pic_user = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pic_angry = new System.Windows.Forms.PictureBox();
@@ -57,6 +58,7 @@
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel_option.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_angry)).BeginInit();
@@ -155,6 +157,8 @@
             this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Gainsboro;
             this.guna2CustomGradientPanel1.BorderRadius = 10;
             this.guna2CustomGradientPanel1.BorderThickness = 1;
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox7);
             this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox3);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_date);
             this.guna2CustomGradientPanel1.Controls.Add(this.pic_user);
@@ -218,6 +222,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Do_an.Properties.Resources.close6;
+            this.pictureBox7.Location = new System.Drawing.Point(402, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox3
             // 
@@ -369,7 +384,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "feeds_image";
             this.Size = new System.Drawing.Size(435, 465);
@@ -380,6 +394,7 @@
             this.panel_option.ResumeLayout(false);
             this.panel_option.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_angry)).EndInit();
@@ -423,5 +438,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

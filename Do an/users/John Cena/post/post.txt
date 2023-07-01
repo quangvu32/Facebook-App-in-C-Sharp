@@ -1,6 +1,7 @@
-John Cena	image	Bạn bè	24 thg 6, 2023	John Wick nè, hihi	74387045_2494802367223831_1606884652847464448_n.jpg	Thích
-John Cena	image	Bạn bè	25 thg 6, 2023		1261-hackerbongocat.gif	Yêu thích
+John Cena	image	Bạn bè	24 thg 6, 2023	John Wick nè hihihi	74387045_2494802367223831_1606884652847464448_n.jpg	Thích
+John Cena	image	Bạn bè	25 thg 6, 2023	Dạo này code mệt quá	1261-hackerbongocat.gif	Buồn
 John Cena	Text	Bạn bè	26 thg 6, 2023	Hello mọi người		Thích
-John Cena	image	Công khai	27 thg 6, 2023		65386207_408410973090008_3172529158567755776_n.jpg	Thích
-John Cena	video	Công khai	27 thg 6, 2023	Transformers: All transformation	TRANSFORMERS SAGA - All Transformations 2007_17.mp4	Haha
-John Cena	image	Công khai	28 thg 6, 2023	Great scenery	ScreenShot-2022-1-18_23-22-55.png	Thích 
+John Cena	image	Bạn bè	27 thg 6, 2023	Hình đại diện mới	65386207_408410973090008_3172529158567755776_n.jpg	Thích
+John Cena	video	Công khai	27 thg 6, 2023	Transformers: All transformation	TRANSFORMERS SAGA - All Transformations 2007_17.mp4	Thích
+John Cena	image	Công khai	28 thg 6, 2023	Great scenery	ScreenShot-2022-1-18_23-22-55.png	Yêu thích
+John Cena	video	Công khai	1 thg 7, 2023	ez game	Tekken 7 2023.04.09 - 02.18.28.03.DVR.1681746861253.mp4	Thích 

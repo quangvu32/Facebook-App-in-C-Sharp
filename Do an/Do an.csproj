@@ -70,6 +70,12 @@
     <Compile Include="background.Designer.cs">
       <DependentUpon>background.cs</DependentUpon>
     </Compile>
+    <Compile Include="ban.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ban.Designer.cs">
+      <DependentUpon>ban.cs</DependentUpon>
+    </Compile>
     <Compile Include="chat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     <Compile Include="friend_find.Designer.cs">
       <DependentUpon>friend_find.cs</DependentUpon>
     </Compile>
+    <Compile Include="minh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="minh.Designer.cs">
+      <DependentUpon>minh.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewFolder1\messager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,18 @@
     </Compile>
     <Compile Include="pass_forgot.Designer.cs">
       <DependentUpon>pass_forgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pic_ban.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pic_ban.Designer.cs">
+      <DependentUpon>pic_ban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pic_minh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pic_minh.Designer.cs">
+      <DependentUpon>pic_minh.cs</DependentUpon>
     </Compile>
     <Compile Include="post.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +195,9 @@
     <EmbeddedResource Include="friend_find.resx">
       <DependentUpon>friend_find.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="minh.resx">
+      <DependentUpon>minh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewFolder1\messager.resx">
       <DependentUpon>messager.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pass_forgot.resx">
       <DependentUpon>pass_forgot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pic_ban.resx">
+      <DependentUpon>pic_ban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pic_minh.resx">
+      <DependentUpon>pic_minh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="post.resx">
       <DependentUpon>post.cs</DependentUpon>
@@ -357,6 +390,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3844442_dot_menu_more_vertical_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643766_album_image_landscape_photo_photos_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3994382_access_close_exit_logout_sign out_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\211751_gear_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\352020_arrow_back_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3844442_dot_menu_more_vertical_icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4202086_like_facebook_fb_logo_social_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\326692_send_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643766_album_image_landscape_photo_photos_icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3643766_album_image_landscape_photo_photos_icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\326711_movie_theaters_video_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\326631_video_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

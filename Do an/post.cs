@@ -14,7 +14,7 @@ namespace Do_an
     public partial class post : UserControl
     {
         public event EventHandler ButtonClicked;
-        public event EventHandler picture;
+        
         private Image _image;
         public Image Image
         {

@@ -24,6 +24,13 @@ namespace Do_an
         private string _url;
         private Image _user;
         private Image _trangthai;
+        private string _trangthai2;
+
+        public string trangthai2
+        {
+            get { return _trangthai2;}
+            set { _trangthai2 = value; }
+        }
         public Image trangthai
         {
             get { return _trangthai; }
@@ -74,6 +81,7 @@ namespace Do_an
             slider.Height = 20;
             guna2TrackBar1.Value = 50;
             panel_option.Visible = false;
+            pictureBox2.Visible = false;
         }
 
         #region slider control
@@ -388,7 +396,16 @@ namespace Do_an
         {
             Button_fix.Invoke(this, EventArgs.Empty);
         }
-
+        public event EventHandler button_hide;
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            button_hide.Invoke(this, EventArgs.Empty);
+        }
+        public void hide()
+        {
+            pictureBox2.Visible = true;
+            pictureBox4.Visible = false;
+        }
         private void pic_pause_Click(object sender, EventArgs e)
         {
             timer1.Stop();

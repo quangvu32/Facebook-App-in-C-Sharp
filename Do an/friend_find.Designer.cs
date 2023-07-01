@@ -28,39 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pic_profile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.pic_profile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2CustomGradientPanel1
-            // 
-            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.guna2CustomGradientPanel1.BorderRadius = 10;
-            this.guna2CustomGradientPanel1.BorderThickness = 1;
-            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.pic_profile);
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel3);
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel2);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(312, 99);
-            this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -74,6 +57,18 @@
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            // 
+            // pic_profile
+            // 
+            this.pic_profile.ImageRotate = 0F;
+            this.pic_profile.Location = new System.Drawing.Point(3, 3);
+            this.pic_profile.Name = "pic_profile";
+            this.pic_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pic_profile.Size = new System.Drawing.Size(70, 70);
+            this.pic_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_profile.TabIndex = 6;
+            this.pic_profile.TabStop = false;
+            this.pic_profile.Click += new System.EventHandler(this.pic_profile_Click);
             // 
             // panel1
             // 
@@ -141,18 +136,6 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // pic_profile
-            // 
-            this.pic_profile.ImageRotate = 0F;
-            this.pic_profile.Location = new System.Drawing.Point(3, 3);
-            this.pic_profile.Name = "pic_profile";
-            this.pic_profile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pic_profile.Size = new System.Drawing.Size(70, 70);
-            this.pic_profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_profile.TabIndex = 6;
-            this.pic_profile.TabStop = false;
-            this.pic_profile.Click += new System.EventHandler(this.pic_profile_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
@@ -187,25 +170,27 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pic_profile);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Name = "friend_find";
-            this.Size = new System.Drawing.Size(315, 102);
+            this.Size = new System.Drawing.Size(308, 95);
             this.Load += new System.EventHandler(this.friend_find_Load);
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_profile)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;

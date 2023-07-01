@@ -12,6 +12,7 @@ namespace Do_an
             InitializeComponent();
             richTextBox1.ReadOnly = true;
             panel_option.Visible = false;
+            pictureBox1.Visible = false;
         }
         string path = Form1.path;
 
@@ -21,6 +22,13 @@ namespace Do_an
         private string _date;
         private Image _user;
         private Image _trangthai;
+        private string _trangthai2;
+
+        public string trangthai2
+        {
+            get { return _trangthai2; }
+            set { _trangthai2 = value; }
+        }
         public Image trangthai
         {
             get { return _trangthai; }
@@ -271,6 +279,16 @@ namespace Do_an
         private void label4_Click(object sender, EventArgs e)
         {
             Button_fix?.Invoke(this, EventArgs.Empty);
+        }
+        public event EventHandler button_hide;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            button_hide.Invoke(this, EventArgs.Empty);
+        }
+        public void hide()
+        {
+            pictureBox1.Visible = true;
+            pictureBox4.Visible = false;
         }
     }
 }

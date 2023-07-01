@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.video = new AxWMPLib.AxWindowsMediaPlayer();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -69,6 +70,7 @@
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel_option.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.video)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -197,7 +199,7 @@
             this.lb_end.AutoSize = true;
             this.lb_end.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_end.ForeColor = System.Drawing.Color.White;
-            this.lb_end.Location = new System.Drawing.Point(352, 8);
+            this.lb_end.Location = new System.Drawing.Point(377, 8);
             this.lb_end.Name = "lb_end";
             this.lb_end.Size = new System.Drawing.Size(43, 17);
             this.lb_end.TabIndex = 31;
@@ -232,12 +234,13 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.panel1);
             this.guna2CustomGradientPanel1.Controls.Add(this.slider);
             this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox4);
             this.guna2CustomGradientPanel1.Controls.Add(this.label3);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_reaction);
             this.guna2CustomGradientPanel1.Controls.Add(this.pic_user);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_date);
             this.guna2CustomGradientPanel1.Controls.Add(this.lb_username);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox4);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox2);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(435, 465);
@@ -288,6 +291,17 @@
             this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
             this.video.Size = new System.Drawing.Size(429, 223);
             this.video.TabIndex = 21;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Do_an.Properties.Resources.close4;
+            this.pictureBox2.Location = new System.Drawing.Point(402, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -501,6 +515,7 @@
             this.panel_option.ResumeLayout(false);
             this.panel_option.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.video)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -558,5 +573,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
